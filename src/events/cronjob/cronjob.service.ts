@@ -875,7 +875,7 @@ export class CronjobService {
     }
   }
 
-  @Cron(CronExpression.EVERY_SECOND)
+  @Cron(CronExpression.EVERY_MINUTE)
   async handleCallHeroku() {
     await to(axios.get('https://free-rice-api.herokuapp.com/job/0'));
     await to(axios.get('https://free-rice-api-1.herokuapp.com/job/1'));
