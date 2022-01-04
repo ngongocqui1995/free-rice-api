@@ -14,4 +14,12 @@ export class AppService {
   getSystem() {
     return this.globalService.getSystem();
   }
+
+  getJob() {
+    return this.globalService.getJob();
+  }
+
+  setJob(value: String) {
+    return this.globalService.setJob(String(value));
+  }
 }
