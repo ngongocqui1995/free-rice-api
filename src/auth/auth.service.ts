@@ -40,7 +40,7 @@ export class AuthService extends TypeOrmCrudService<User> {
     // generate JSON web token
     const token = await this.jwtService.signAsync(
       { email: user.email, id: user.id, name: user.name, avatar: user.avatar },
-      { expiresIn: '1d' },
+      { expiresIn: process.env.JWT_EXPIRES_IN },
     );
 
     return {

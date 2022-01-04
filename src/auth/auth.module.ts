@@ -19,8 +19,8 @@ import { ValidAddress } from 'src/modules/valid-address/entities/valid-address.e
   imports: [
     ConfigModule.forRoot(),
     JwtModule.register({
-      secret: 'ngoqui1@',
-      signOptions: { expiresIn: '1d' },
+      secret: process.env.JWT_SECRET,
+      signOptions: { expiresIn: process.env.JWT_EXPIRES_IN },
     }),
     TypeOrmModule.forFeature([User, Role, ValidAddress]),
   ],
