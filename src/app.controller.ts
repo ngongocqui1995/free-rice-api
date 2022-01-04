@@ -22,7 +22,7 @@ export class AppController {
     return this.appService.getJob();
   }
 
-  @Put('/job/:value')
+  @Get('/job/:value')
   setJob(@Query('value') value) {
     return this.appService.setJob(value);
   }
