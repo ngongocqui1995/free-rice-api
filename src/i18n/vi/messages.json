@@ -1,0 +1,34 @@
+{
+  "IMAGE": {
+    "UPLOAD_SUCCESS": "Upload ảnh thành công!",
+    "UPLOAD_FAIL": "Upload ảnh thất bại!"
+  },
+  "VIDEO": {
+    "UPLOAD_SUCCESS": "Upload video thành công!",
+    "UPLOAD_FAIL": "Upload video thất bại!"
+  },
+  "AUTH": {
+    "GET": "Đăng nhập thành công"
+  },
+  "STATUS": {
+    "ACTIVE": "Hoạt động",
+    "INACTIVE": "Không hoạt động"
+  },
+  "COMMENT": {
+    "TIME_REMAIN": "Thời gian còn lại là {time}"
+  },
+  "ACTION": {
+    "GET": "Truy vấn {name} thành công.",
+    "CREATE": "Tạo {name} thành công.",
+    "UPDATE": "Cập nhật {name} thành công.",
+    "DELETE": "Xóa {name} thành công.",
+    "ACTIVE": "Kích hoạt {name} thành công.",
+    "INACTIVE": "Hủy kích hoạt {name} thành công.",
+    "CHANGE_STATUS": "Thay đổi thành trạng thái {name} thành công."
+  },
+  "GET_SUCCESS": "Truy vấn thành công.",
+  "UPDATE_SUCCESS": "Cập nhật thành công.",
+  "RESET_PASSWORD": {
+    "PASSWORD_CHANGED": "Thay đổi mật khẩu thành công."
+  }
+}

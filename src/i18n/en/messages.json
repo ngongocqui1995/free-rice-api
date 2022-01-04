@@ -1,0 +1,34 @@
+{
+  "IMAGE": {
+    "UPLOAD_SUCCESS": "Upload photo successfully!",
+    "UPLOAD_FAIL": "Upload photo fail!"
+  },
+  "VIDEO": {
+    "UPLOAD_SUCCESS": "Upload video successfully!",
+    "UPLOAD_FAIL": "Upload video fail!"
+  },
+  "AUTH": {
+    "GET": "Login success"
+  },
+  "STATUS": {
+    "ACTIVE": "Hoạt động",
+    "INACTIVE": "Không hoạt động"
+  },
+  "COMMENT": {
+    "TIME_REMAIN": "Time remaining is {time}"
+  },
+  "ACTION": {
+    "GET": "Query {name} successfully.",
+    "CREATE": "Create {name} successfully.",
+    "UPDATE": "Update {name} successfully.",
+    "DELETE": "Delete {name} successfully.",
+    "ACTIVE": "Activated {name} successfully.",
+    "INACTIVE": "Deactivate {name} successfully.",
+    "CHANGE_STATUS": "Change to status {name} successfully."
+  },
+  "GET_SUCCESS": "Query successfully.",
+  "UPDATE_SUCCESS": "Update successfully.",
+  "RESET_PASSWORD": {
+    "PASSWORD_CHANGED": "Password update successfully."
+  }
+}
