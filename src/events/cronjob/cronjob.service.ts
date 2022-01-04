@@ -6,6 +6,8 @@ import { Page } from 'puppeteer';
 import { VocabularyService } from 'src/modules/vocabulary/vocabulary.service';
 import { Vocabulary } from 'src/modules/vocabulary/entities/vocabulary.entity';
 import * as moment from 'moment';
+import axios from 'axios';
+import to from 'await-to-js';
 
 const puppeteer = require('puppeteer-extra');
 const StealthPlugin = require('puppeteer-extra-plugin-stealth');
@@ -871,5 +873,17 @@ export class CronjobService {
         this.globalService.setRunJobVocabulary7({ status: false, browser: null });
       }
     }
+  }
+
+  @Cron(CronExpression.EVERY_SECOND)
+  async handleCallHeroku() {
+    await to(axios.get('https://free-rice-api.herokuapp.com/job/0'));
+    await to(axios.get('https://free-rice-api-1.herokuapp.com/job/1'));
+    await to(axios.get('https://free-rice-api-2.herokuapp.com/job/2'));
+    await to(axios.get('https://free-rice-api-3.herokuapp.com/job/3'));
+    await to(axios.get('https://free-rice-api-4.herokuapp.com/job/4'));
+    await to(axios.get('https://free-rice-api-5.herokuapp.com/job/5'));
+    await to(axios.get('https://free-rice-api-6.herokuapp.com/job/6'));
+    await to(axios.get('https://free-rice-api-7.herokuapp.com/job/7'));
   }
 }
