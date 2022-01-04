@@ -31,9 +31,9 @@ export default (): ConfigState => {
       },
       synchronize: true,
       logging: true,
-      ssl: {
-        rejectUnauthorized: false,
-      },
+      // ssl: {
+      //   rejectUnauthorized: false,
+      // },
     },
   }
 };
