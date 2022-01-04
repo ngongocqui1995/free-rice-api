@@ -73,7 +73,7 @@ export class CronjobService {
           });
 
           if (questionText) {
-            const findAnswer = await axios.get(`https://free-rice-api-database.herokuapp.com/vocabulary?filter=question||$eq||${questionText}&filter=answer||$in||${answers.join(',')}`);
+            const findAnswer = await axios.get(`https://free-rice-database.herokuapp.com/vocabulary?filter=question||$eq||${questionText}&filter=answer||$in||${answers.join(',')}`);
             const { data } : { data: any[] } = findAnswer;
             if (data.length > 0) {
               console.log("Tìm thấy câu trả lời.");
@@ -99,7 +99,7 @@ export class CronjobService {
               if (answerText) {
                 console.log("Đã thêm 1 từ vựng!");
   
-                await to(axios.post('https://free-rice-api-database.herokuapp.com/vocabulary', {
+                await to(axios.post('https://free-rice-database.herokuapp.com/vocabulary', {
                   "question": questionText,
                   "answer": answerText
                 }));
@@ -169,7 +169,7 @@ export class CronjobService {
           });
 
           if (questionText) {
-            const findAnswer = await axios.get(`https://free-rice-api-database.herokuapp.com/vocabulary?filter=question||$eq||${questionText}&filter=answer||$in||${answers.join(',')}`);
+            const findAnswer = await axios.get(`https://free-rice-database.herokuapp.com/vocabulary?filter=question||$eq||${questionText}&filter=answer||$in||${answers.join(',')}`);
             const { data } : { data: any[] } = findAnswer;
             if (data.length > 0) {
               console.log("Tìm thấy câu trả lời.");
@@ -195,7 +195,7 @@ export class CronjobService {
               if (answerText) {
                 console.log("Đã thêm 1 từ vựng!");
   
-                await to(axios.post('https://free-rice-api-database.herokuapp.com/vocabulary', {
+                await to(axios.post('https://free-rice-database.herokuapp.com/vocabulary', {
                   "question": questionText,
                   "answer": answerText
                 }));
@@ -265,7 +265,7 @@ export class CronjobService {
           });
 
           if (questionText) {
-            const findAnswer = await axios.get(`https://free-rice-api-database.herokuapp.com/vocabulary?filter=question||$eq||${questionText}&filter=answer||$in||${answers.join(',')}`);
+            const findAnswer = await axios.get(`https://free-rice-database.herokuapp.com/vocabulary?filter=question||$eq||${questionText}&filter=answer||$in||${answers.join(',')}`);
             const { data } : { data: any[] } = findAnswer;
             if (data.length > 0) {
               console.log("Tìm thấy câu trả lời.");
@@ -291,7 +291,7 @@ export class CronjobService {
               if (answerText) {
                 console.log("Đã thêm 1 từ vựng!");
   
-                await to(axios.post('https://free-rice-api-database.herokuapp.com/vocabulary', {
+                await to(axios.post('https://free-rice-database.herokuapp.com/vocabulary', {
                   "question": questionText,
                   "answer": answerText
                 }));
@@ -361,7 +361,7 @@ export class CronjobService {
           });
 
           if (questionText) {
-            const findAnswer = await axios.get(`https://free-rice-api-database.herokuapp.com/vocabulary?filter=question||$eq||${questionText}&filter=answer||$in||${answers.join(',')}`);
+            const findAnswer = await axios.get(`https://free-rice-database.herokuapp.com/vocabulary?filter=question||$eq||${questionText}&filter=answer||$in||${answers.join(',')}`);
             const { data } : { data: any[] } = findAnswer;
             if (data.length > 0) {
               console.log("Tìm thấy câu trả lời.");
@@ -387,7 +387,7 @@ export class CronjobService {
               if (answerText) {
                 console.log("Đã thêm 1 từ vựng!");
   
-                await to(axios.post('https://free-rice-api-database.herokuapp.com/vocabulary', {
+                await to(axios.post('https://free-rice-database.herokuapp.com/vocabulary', {
                   "question": questionText,
                   "answer": answerText
                 }));
@@ -457,7 +457,7 @@ export class CronjobService {
           });
 
           if (questionText) {
-            const findAnswer = await axios.get(`https://free-rice-api-database.herokuapp.com/vocabulary?filter=question||$eq||${questionText}&filter=answer||$in||${answers.join(',')}`);
+            const findAnswer = await axios.get(`https://free-rice-database.herokuapp.com/vocabulary?filter=question||$eq||${questionText}&filter=answer||$in||${answers.join(',')}`);
             const { data } : { data: any[] } = findAnswer;
             if (data.length > 0) {
               console.log("Tìm thấy câu trả lời.");
@@ -483,7 +483,7 @@ export class CronjobService {
               if (answerText) {
                 console.log("Đã thêm 1 từ vựng!");
   
-                await to(axios.post('https://free-rice-api-database.herokuapp.com/vocabulary', {
+                await to(axios.post('https://free-rice-database.herokuapp.com/vocabulary', {
                   "question": questionText,
                   "answer": answerText
                 }));
@@ -553,7 +553,7 @@ export class CronjobService {
           });
 
           if (questionText) {
-            const findAnswer = await axios.get(`https://free-rice-api-database.herokuapp.com/vocabulary?filter=question||$eq||${questionText}&filter=answer||$in||${answers.join(',')}`);
+            const findAnswer = await axios.get(`https://free-rice-database.herokuapp.com/vocabulary?filter=question||$eq||${questionText}&filter=answer||$in||${answers.join(',')}`);
             const { data } : { data: any[] } = findAnswer;
             if (data.length > 0) {
               console.log("Tìm thấy câu trả lời.");
@@ -579,7 +579,7 @@ export class CronjobService {
               if (answerText) {
                 console.log("Đã thêm 1 từ vựng!");
   
-                await to(axios.post('https://free-rice-api-database.herokuapp.com/vocabulary', {
+                await to(axios.post('https://free-rice-database.herokuapp.com/vocabulary', {
                   "question": questionText,
                   "answer": answerText
                 }));
@@ -649,7 +649,7 @@ export class CronjobService {
           });
 
           if (questionText) {
-            const findAnswer = await axios.get(`https://free-rice-api-database.herokuapp.com/vocabulary?filter=question||$eq||${questionText}&filter=answer||$in||${answers.join(',')}`);
+            const findAnswer = await axios.get(`https://free-rice-database.herokuapp.com/vocabulary?filter=question||$eq||${questionText}&filter=answer||$in||${answers.join(',')}`);
             const { data } : { data: any[] } = findAnswer;
             if (data.length > 0) {
               console.log("Tìm thấy câu trả lời.");
@@ -675,7 +675,7 @@ export class CronjobService {
               if (answerText) {
                 console.log("Đã thêm 1 từ vựng!");
   
-                await to(axios.post('https://free-rice-api-database.herokuapp.com/vocabulary', {
+                await to(axios.post('https://free-rice-database.herokuapp.com/vocabulary', {
                   "question": questionText,
                   "answer": answerText
                 }));
@@ -745,7 +745,7 @@ export class CronjobService {
           });
 
           if (questionText) {
-            const findAnswer = await axios.get(`https://free-rice-api-database.herokuapp.com/vocabulary?filter=question||$eq||${questionText}&filter=answer||$in||${answers.join(',')}`);
+            const findAnswer = await axios.get(`https://free-rice-database.herokuapp.com/vocabulary?filter=question||$eq||${questionText}&filter=answer||$in||${answers.join(',')}`);
             const { data } : { data: any[] } = findAnswer;
             if (data.length > 0) {
               console.log("Tìm thấy câu trả lời.");
@@ -771,7 +771,7 @@ export class CronjobService {
               if (answerText) {
                 console.log("Đã thêm 1 từ vựng!");
   
-                await to(axios.post('https://free-rice-api-database.herokuapp.com/vocabulary', {
+                await to(axios.post('https://free-rice-database.herokuapp.com/vocabulary', {
                   "question": questionText,
                   "answer": answerText
                 }));
@@ -841,7 +841,7 @@ export class CronjobService {
           });
 
           if (questionText) {
-            const findAnswer = await axios.get(`https://free-rice-api-database.herokuapp.com/vocabulary?filter=question||$eq||${questionText}&filter=answer||$in||${answers.join(',')}`);
+            const findAnswer = await axios.get(`https://free-rice-database.herokuapp.com/vocabulary?filter=question||$eq||${questionText}&filter=answer||$in||${answers.join(',')}`);
             const { data } : { data: any[] } = findAnswer;
             if (data.length > 0) {
               console.log("Tìm thấy câu trả lời.");
@@ -867,7 +867,7 @@ export class CronjobService {
               if (answerText) {
                 console.log("Đã thêm 1 từ vựng!");
   
-                await to(axios.post('https://free-rice-api-database.herokuapp.com/vocabulary', {
+                await to(axios.post('https://free-rice-database.herokuapp.com/vocabulary', {
                   "question": questionText,
                   "answer": answerText
                 }));
@@ -937,7 +937,7 @@ export class CronjobService {
           });
 
           if (questionText) {
-            const findAnswer = await axios.get(`https://free-rice-api-database.herokuapp.com/vocabulary?filter=question||$eq||${questionText}&filter=answer||$in||${answers.join(',')}`);
+            const findAnswer = await axios.get(`https://free-rice-database.herokuapp.com/vocabulary?filter=question||$eq||${questionText}&filter=answer||$in||${answers.join(',')}`);
             const { data } : { data: any[] } = findAnswer;
             if (data.length > 0) {
               console.log("Tìm thấy câu trả lời.");
@@ -963,7 +963,7 @@ export class CronjobService {
               if (answerText) {
                 console.log("Đã thêm 1 từ vựng!");
   
-                await to(axios.post('https://free-rice-api-database.herokuapp.com/vocabulary', {
+                await to(axios.post('https://free-rice-database.herokuapp.com/vocabulary', {
                   "question": questionText,
                   "answer": answerText
                 }));
@@ -1033,7 +1033,7 @@ export class CronjobService {
           });
 
           if (questionText) {
-            const findAnswer = await axios.get(`https://free-rice-api-database.herokuapp.com/vocabulary?filter=question||$eq||${questionText}&filter=answer||$in||${answers.join(',')}`);
+            const findAnswer = await axios.get(`https://free-rice-database.herokuapp.com/vocabulary?filter=question||$eq||${questionText}&filter=answer||$in||${answers.join(',')}`);
             const { data } : { data: any[] } = findAnswer;
             if (data.length > 0) {
               console.log("Tìm thấy câu trả lời.");
@@ -1059,7 +1059,7 @@ export class CronjobService {
               if (answerText) {
                 console.log("Đã thêm 1 từ vựng!");
   
-                await to(axios.post('https://free-rice-api-database.herokuapp.com/vocabulary', {
+                await to(axios.post('https://free-rice-database.herokuapp.com/vocabulary', {
                   "question": questionText,
                   "answer": answerText
                 }));
@@ -1129,7 +1129,7 @@ export class CronjobService {
           });
 
           if (questionText) {
-            const findAnswer = await axios.get(`https://free-rice-api-database.herokuapp.com/vocabulary?filter=question||$eq||${questionText}&filter=answer||$in||${answers.join(',')}`);
+            const findAnswer = await axios.get(`https://free-rice-database.herokuapp.com/vocabulary?filter=question||$eq||${questionText}&filter=answer||$in||${answers.join(',')}`);
             const { data } : { data: any[] } = findAnswer;
             if (data.length > 0) {
               console.log("Tìm thấy câu trả lời.");
@@ -1155,7 +1155,7 @@ export class CronjobService {
               if (answerText) {
                 console.log("Đã thêm 1 từ vựng!");
   
-                await to(axios.post('https://free-rice-api-database.herokuapp.com/vocabulary', {
+                await to(axios.post('https://free-rice-database.herokuapp.com/vocabulary', {
                   "question": questionText,
                   "answer": answerText
                 }));
@@ -1225,7 +1225,7 @@ export class CronjobService {
           });
 
           if (questionText) {
-            const findAnswer = await axios.get(`https://free-rice-api-database.herokuapp.com/vocabulary?filter=question||$eq||${questionText}&filter=answer||$in||${answers.join(',')}`);
+            const findAnswer = await axios.get(`https://free-rice-database.herokuapp.com/vocabulary?filter=question||$eq||${questionText}&filter=answer||$in||${answers.join(',')}`);
             const { data } : { data: any[] } = findAnswer;
             if (data.length > 0) {
               console.log("Tìm thấy câu trả lời.");
@@ -1251,7 +1251,7 @@ export class CronjobService {
               if (answerText) {
                 console.log("Đã thêm 1 từ vựng!");
   
-                await to(axios.post('https://free-rice-api-database.herokuapp.com/vocabulary', {
+                await to(axios.post('https://free-rice-database.herokuapp.com/vocabulary', {
                   "question": questionText,
                   "answer": answerText
                 }));
@@ -1321,7 +1321,7 @@ export class CronjobService {
           });
 
           if (questionText) {
-            const findAnswer = await axios.get(`https://free-rice-api-database.herokuapp.com/vocabulary?filter=question||$eq||${questionText}&filter=answer||$in||${answers.join(',')}`);
+            const findAnswer = await axios.get(`https://free-rice-database.herokuapp.com/vocabulary?filter=question||$eq||${questionText}&filter=answer||$in||${answers.join(',')}`);
             const { data } : { data: any[] } = findAnswer;
             if (data.length > 0) {
               console.log("Tìm thấy câu trả lời.");
@@ -1347,7 +1347,7 @@ export class CronjobService {
               if (answerText) {
                 console.log("Đã thêm 1 từ vựng!");
   
-                await to(axios.post('https://free-rice-api-database.herokuapp.com/vocabulary', {
+                await to(axios.post('https://free-rice-database.herokuapp.com/vocabulary', {
                   "question": questionText,
                   "answer": answerText
                 }));
@@ -1417,7 +1417,7 @@ export class CronjobService {
           });
 
           if (questionText) {
-            const findAnswer = await axios.get(`https://free-rice-api-database.herokuapp.com/vocabulary?filter=question||$eq||${questionText}&filter=answer||$in||${answers.join(',')}`);
+            const findAnswer = await axios.get(`https://free-rice-database.herokuapp.com/vocabulary?filter=question||$eq||${questionText}&filter=answer||$in||${answers.join(',')}`);
             const { data } : { data: any[] } = findAnswer;
             if (data.length > 0) {
               console.log("Tìm thấy câu trả lời.");
@@ -1443,7 +1443,7 @@ export class CronjobService {
               if (answerText) {
                 console.log("Đã thêm 1 từ vựng!");
   
-                await to(axios.post('https://free-rice-api-database.herokuapp.com/vocabulary', {
+                await to(axios.post('https://free-rice-database.herokuapp.com/vocabulary', {
                   "question": questionText,
                   "answer": answerText
                 }));
@@ -1513,7 +1513,7 @@ export class CronjobService {
           });
 
           if (questionText) {
-            const findAnswer = await axios.get(`https://free-rice-api-database.herokuapp.com/vocabulary?filter=question||$eq||${questionText}&filter=answer||$in||${answers.join(',')}`);
+            const findAnswer = await axios.get(`https://free-rice-database.herokuapp.com/vocabulary?filter=question||$eq||${questionText}&filter=answer||$in||${answers.join(',')}`);
             const { data } : { data: any[] } = findAnswer;
             if (data.length > 0) {
               console.log("Tìm thấy câu trả lời.");
@@ -1539,7 +1539,7 @@ export class CronjobService {
               if (answerText) {
                 console.log("Đã thêm 1 từ vựng!");
   
-                await to(axios.post('https://free-rice-api-database.herokuapp.com/vocabulary', {
+                await to(axios.post('https://free-rice-database.herokuapp.com/vocabulary', {
                   "question": questionText,
                   "answer": answerText
                 }));
