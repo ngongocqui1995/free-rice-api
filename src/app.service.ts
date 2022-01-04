@@ -20,6 +20,7 @@ export class AppService {
   }
 
   setJob(value: String) {
-    return this.globalService.setJob(String(value));
+    this.globalService.setJob(String(value));
+    return true;
   }
 }

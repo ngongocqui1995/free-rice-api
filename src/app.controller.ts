@@ -1,4 +1,4 @@
-import { Controller, Get, Put, Query } from '@nestjs/common';
+import { Controller, Get, Param, Put, Query } from '@nestjs/common';
 import { ApiTags } from '@nestjs/swagger';
 import { AppService } from './app.service';
 
@@ -23,7 +23,7 @@ export class AppController {
   }
 
   @Get('/job/:value')
-  setJob(@Query('value') value) {
+  setJob(@Param('value') value) {
     return this.appService.setJob(value);
   }
 }
