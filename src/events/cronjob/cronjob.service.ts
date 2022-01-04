@@ -792,6 +792,89 @@ export class CronjobService {
     }
   }
 
+  @Cron("*/20 * * * *")
+  async handleVocabularyClose() {
+    if (true) {
+      const { browser } = this.globalService.getRunJobVocabulary();
+
+      if (browser) {
+        if (browser) await browser.close();
+        if (browser?.process() != null) browser?.process().kill('SIGINT');
+        this.globalService.setRunJobVocabulary({ status: false, browser: null });
+      }
+    }
+
+    if (true) {
+      const { browser } = this.globalService.getRunJobVocabulary1();
+
+      if (browser) {
+        if (browser) await browser.close();
+        if (browser?.process() != null) browser?.process().kill('SIGINT');
+        this.globalService.setRunJobVocabulary1({ status: false, browser: null });
+      }
+    }
+
+    if (true) {
+      const { browser } = this.globalService.getRunJobVocabulary2();
+
+      if (browser) {
+        if (browser) await browser.close();
+        if (browser?.process() != null) browser?.process().kill('SIGINT');
+        this.globalService.setRunJobVocabulary2({ status: false, browser: null });
+      }
+    }
+
+    if (true) {
+      const { browser } = this.globalService.getRunJobVocabulary3();
+
+      if (browser) {
+        if (browser) await browser.close();
+        if (browser?.process() != null) browser?.process().kill('SIGINT');
+        this.globalService.setRunJobVocabulary3({ status: false, browser: null });
+      }
+    }
+
+    if (true) {
+      const { browser } = this.globalService.getRunJobVocabulary4();
+
+      if (browser) {
+        if (browser) await browser.close();
+        if (browser?.process() != null) browser?.process().kill('SIGINT');
+        this.globalService.setRunJobVocabulary4({ status: false, browser: null });
+      }
+    }
+
+    if (true) {
+      const { browser } = this.globalService.getRunJobVocabulary5();
+
+      if (browser) {
+        if (browser) await browser.close();
+        if (browser?.process() != null) browser?.process().kill('SIGINT');
+        this.globalService.setRunJobVocabulary5({ status: false, browser: null });
+      }
+    }
+
+    if (true) {
+      const { browser } = this.globalService.getRunJobVocabulary6();
+
+      if (browser) {
+        if (browser) await browser.close();
+        if (browser?.process() != null) browser?.process().kill('SIGINT');
+        this.globalService.setRunJobVocabulary6({ status: false, browser: null });
+      }
+    }
+
+    if (true) {
+      const { browser } = this.globalService.getRunJobVocabulary7();
+
+      if (browser) {
+        if (browser) await browser.close();
+        if (browser?.process() != null) browser?.process().kill('SIGINT');
+        this.globalService.setRunJobVocabulary7({ status: false, browser: null });
+      }
+    }
+  }
+
   @Cron(CronExpression.EVERY_MINUTE)
   async handleVocabularyError() {
     if (true) {
