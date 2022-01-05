@@ -74,9 +74,13 @@ export class CronjobService {
           });
 
           if (questionText) {
-            const findAnswer = await axios.get(`${hostDB}/vocabulary?filter=question||$eq||${questionText}&filter=answer||$in||${answers.join(',')}`);
+            let findAnswer, err;
+            do {
+              [err, findAnswer] = await to(axios.get(`${hostDB}/vocabulary?filter=question||$eq||${questionText}&filter=answer||$in||${answers.join(',')}`));
+            } while (err?.message);
+
             const { data } : { data: any[] } = findAnswer;
-            if (data.length > 0) {
+            if (data?.length > 0) {
               console.log("Tìm thấy câu trả lời.");
   
               await page.waitForXPath(`//*[normalize-space(text())="${data[0].answer}"]`, { timeout: 10000 });
@@ -170,9 +174,13 @@ export class CronjobService {
           });
 
           if (questionText) {
-            const findAnswer = await axios.get(`${hostDB}/vocabulary?filter=question||$eq||${questionText}&filter=answer||$in||${answers.join(',')}`);
+            let findAnswer, err;
+            do {
+              [err, findAnswer] = await to(axios.get(`${hostDB}/vocabulary?filter=question||$eq||${questionText}&filter=answer||$in||${answers.join(',')}`));
+            } while (err?.message);
+
             const { data } : { data: any[] } = findAnswer;
-            if (data.length > 0) {
+            if (data?.length > 0) {
               console.log("Tìm thấy câu trả lời.");
   
               await page.waitForXPath(`//*[normalize-space(text())="${data[0].answer}"]`, { timeout: 10000 });
@@ -266,9 +274,13 @@ export class CronjobService {
           });
 
           if (questionText) {
-            const findAnswer = await axios.get(`${hostDB}/vocabulary?filter=question||$eq||${questionText}&filter=answer||$in||${answers.join(',')}`);
+            let findAnswer, err;
+            do {
+              [err, findAnswer] = await to(axios.get(`${hostDB}/vocabulary?filter=question||$eq||${questionText}&filter=answer||$in||${answers.join(',')}`));
+            } while (err?.message);
+
             const { data } : { data: any[] } = findAnswer;
-            if (data.length > 0) {
+            if (data?.length > 0) {
               console.log("Tìm thấy câu trả lời.");
   
               await page.waitForXPath(`//*[normalize-space(text())="${data[0].answer}"]`, { timeout: 10000 });
@@ -362,9 +374,13 @@ export class CronjobService {
           });
 
           if (questionText) {
-            const findAnswer = await axios.get(`${hostDB}/vocabulary?filter=question||$eq||${questionText}&filter=answer||$in||${answers.join(',')}`);
+            let findAnswer, err;
+            do {
+              [err, findAnswer] = await to(axios.get(`${hostDB}/vocabulary?filter=question||$eq||${questionText}&filter=answer||$in||${answers.join(',')}`));
+            } while (err?.message);
+
             const { data } : { data: any[] } = findAnswer;
-            if (data.length > 0) {
+            if (data?.length > 0) {
               console.log("Tìm thấy câu trả lời.");
   
               await page.waitForXPath(`//*[normalize-space(text())="${data[0].answer}"]`, { timeout: 10000 });
@@ -458,9 +474,13 @@ export class CronjobService {
           });
 
           if (questionText) {
-            const findAnswer = await axios.get(`${hostDB}/vocabulary?filter=question||$eq||${questionText}&filter=answer||$in||${answers.join(',')}`);
+            let findAnswer, err;
+            do {
+              [err, findAnswer] = await to(axios.get(`${hostDB}/vocabulary?filter=question||$eq||${questionText}&filter=answer||$in||${answers.join(',')}`));
+            } while (err?.message);
+
             const { data } : { data: any[] } = findAnswer;
-            if (data.length > 0) {
+            if (data?.length > 0) {
               console.log("Tìm thấy câu trả lời.");
   
               await page.waitForXPath(`//*[normalize-space(text())="${data[0].answer}"]`, { timeout: 10000 });
@@ -554,9 +574,13 @@ export class CronjobService {
           });
 
           if (questionText) {
-            const findAnswer = await axios.get(`${hostDB}/vocabulary?filter=question||$eq||${questionText}&filter=answer||$in||${answers.join(',')}`);
+            let findAnswer, err;
+            do {
+              [err, findAnswer] = await to(axios.get(`${hostDB}/vocabulary?filter=question||$eq||${questionText}&filter=answer||$in||${answers.join(',')}`));
+            } while (err?.message);
+
             const { data } : { data: any[] } = findAnswer;
-            if (data.length > 0) {
+            if (data?.length > 0) {
               console.log("Tìm thấy câu trả lời.");
   
               await page.waitForXPath(`//*[normalize-space(text())="${data[0].answer}"]`, { timeout: 10000 });
@@ -568,7 +592,7 @@ export class CronjobService {
               // tự đánh câu trả lời
               await page.waitForXPath(`//div[contains(@class, 'card-button')]`, { timeout: 10000 });
               const answerBtn = await page.$x(`//div[contains(@class, 'card-button')]`);
-              await page.evaluate((el) => el?.click(), answerBtn[0]);
+              await page.evaluate((el) => el?.click(), answerBtn[0]);s
 
               let answerText;
               do {
@@ -650,9 +674,13 @@ export class CronjobService {
           });
 
           if (questionText) {
-            const findAnswer = await axios.get(`${hostDB}/vocabulary?filter=question||$eq||${questionText}&filter=answer||$in||${answers.join(',')}`);
+            let findAnswer, err;
+            do {
+              [err, findAnswer] = await to(axios.get(`${hostDB}/vocabulary?filter=question||$eq||${questionText}&filter=answer||$in||${answers.join(',')}`));
+            } while (err?.message);
+
             const { data } : { data: any[] } = findAnswer;
-            if (data.length > 0) {
+            if (data?.length > 0) {
               console.log("Tìm thấy câu trả lời.");
   
               await page.waitForXPath(`//*[normalize-space(text())="${data[0].answer}"]`, { timeout: 10000 });
@@ -746,9 +774,13 @@ export class CronjobService {
           });
 
           if (questionText) {
-            const findAnswer = await axios.get(`${hostDB}/vocabulary?filter=question||$eq||${questionText}&filter=answer||$in||${answers.join(',')}`);
+            let findAnswer, err;
+            do {
+              [err, findAnswer] = await to(axios.get(`${hostDB}/vocabulary?filter=question||$eq||${questionText}&filter=answer||$in||${answers.join(',')}`));
+            } while (err?.message);
+
             const { data } : { data: any[] } = findAnswer;
-            if (data.length > 0) {
+            if (data?.length > 0) {
               console.log("Tìm thấy câu trả lời.");
   
               await page.waitForXPath(`//*[normalize-space(text())="${data[0].answer}"]`, { timeout: 10000 });
@@ -842,9 +874,13 @@ export class CronjobService {
           });
 
           if (questionText) {
-            const findAnswer = await axios.get(`${hostDB}/vocabulary?filter=question||$eq||${questionText}&filter=answer||$in||${answers.join(',')}`);
+            let findAnswer, err;
+            do {
+              [err, findAnswer] = await to(axios.get(`${hostDB}/vocabulary?filter=question||$eq||${questionText}&filter=answer||$in||${answers.join(',')}`));
+            } while (err?.message);
+            
             const { data } : { data: any[] } = findAnswer;
-            if (data.length > 0) {
+            if (data?.length > 0) {
               console.log("Tìm thấy câu trả lời.");
   
               await page.waitForXPath(`//*[normalize-space(text())="${data[0].answer}"]`, { timeout: 10000 });
@@ -938,9 +974,13 @@ export class CronjobService {
           });
 
           if (questionText) {
-            const findAnswer = await axios.get(`${hostDB}/vocabulary?filter=question||$eq||${questionText}&filter=answer||$in||${answers.join(',')}`);
+            let findAnswer, err;
+            do {
+              [err, findAnswer] = await to(axios.get(`${hostDB}/vocabulary?filter=question||$eq||${questionText}&filter=answer||$in||${answers.join(',')}`));
+            } while (err?.message);
+
             const { data } : { data: any[] } = findAnswer;
-            if (data.length > 0) {
+            if (data?.length > 0) {
               console.log("Tìm thấy câu trả lời.");
   
               await page.waitForXPath(`//*[normalize-space(text())="${data[0].answer}"]`, { timeout: 10000 });
@@ -1034,9 +1074,13 @@ export class CronjobService {
           });
 
           if (questionText) {
-            const findAnswer = await axios.get(`${hostDB}/vocabulary?filter=question||$eq||${questionText}&filter=answer||$in||${answers.join(',')}`);
+            let findAnswer, err;
+            do {
+              [err, findAnswer] = await to(axios.get(`${hostDB}/vocabulary?filter=question||$eq||${questionText}&filter=answer||$in||${answers.join(',')}`));
+            } while (err?.message);
+
             const { data } : { data: any[] } = findAnswer;
-            if (data.length > 0) {
+            if (data?.length > 0) {
               console.log("Tìm thấy câu trả lời.");
   
               await page.waitForXPath(`//*[normalize-space(text())="${data[0].answer}"]`, { timeout: 10000 });
@@ -1130,9 +1174,13 @@ export class CronjobService {
           });
 
           if (questionText) {
-            const findAnswer = await axios.get(`${hostDB}/vocabulary?filter=question||$eq||${questionText}&filter=answer||$in||${answers.join(',')}`);
+            let findAnswer, err;
+            do {
+              [err, findAnswer] = await to(axios.get(`${hostDB}/vocabulary?filter=question||$eq||${questionText}&filter=answer||$in||${answers.join(',')}`));
+            } while (err?.message);
+
             const { data } : { data: any[] } = findAnswer;
-            if (data.length > 0) {
+            if (data?.length > 0) {
               console.log("Tìm thấy câu trả lời.");
   
               await page.waitForXPath(`//*[normalize-space(text())="${data[0].answer}"]`, { timeout: 10000 });
@@ -1226,9 +1274,13 @@ export class CronjobService {
           });
 
           if (questionText) {
-            const findAnswer = await axios.get(`${hostDB}/vocabulary?filter=question||$eq||${questionText}&filter=answer||$in||${answers.join(',')}`);
+            let findAnswer, err;
+            do {
+              [err, findAnswer] = await to(axios.get(`${hostDB}/vocabulary?filter=question||$eq||${questionText}&filter=answer||$in||${answers.join(',')}`));
+            } while (err?.message);
+
             const { data } : { data: any[] } = findAnswer;
-            if (data.length > 0) {
+            if (data?.length > 0) {
               console.log("Tìm thấy câu trả lời.");
   
               await page.waitForXPath(`//*[normalize-space(text())="${data[0].answer}"]`, { timeout: 10000 });
@@ -1322,9 +1374,13 @@ export class CronjobService {
           });
 
           if (questionText) {
-            const findAnswer = await axios.get(`${hostDB}/vocabulary?filter=question||$eq||${questionText}&filter=answer||$in||${answers.join(',')}`);
+            let findAnswer, err;
+            do {
+              [err, findAnswer] = await to(axios.get(`${hostDB}/vocabulary?filter=question||$eq||${questionText}&filter=answer||$in||${answers.join(',')}`));
+            } while (err?.message);
+
             const { data } : { data: any[] } = findAnswer;
-            if (data.length > 0) {
+            if (data?.length > 0) {
               console.log("Tìm thấy câu trả lời.");
   
               await page.waitForXPath(`//*[normalize-space(text())="${data[0].answer}"]`, { timeout: 10000 });
@@ -1418,9 +1474,13 @@ export class CronjobService {
           });
 
           if (questionText) {
-            const findAnswer = await axios.get(`${hostDB}/vocabulary?filter=question||$eq||${questionText}&filter=answer||$in||${answers.join(',')}`);
+            let findAnswer, err;
+            do {
+              [err, findAnswer] = await to(axios.get(`${hostDB}/vocabulary?filter=question||$eq||${questionText}&filter=answer||$in||${answers.join(',')}`));
+            } while (err?.message);
+
             const { data } : { data: any[] } = findAnswer;
-            if (data.length > 0) {
+            if (data?.length > 0) {
               console.log("Tìm thấy câu trả lời.");
   
               await page.waitForXPath(`//*[normalize-space(text())="${data[0].answer}"]`, { timeout: 10000 });
@@ -1514,9 +1574,13 @@ export class CronjobService {
           });
 
           if (questionText) {
-            const findAnswer = await axios.get(`${hostDB}/vocabulary?filter=question||$eq||${questionText}&filter=answer||$in||${answers.join(',')}`);
+            let findAnswer, err;
+            do {
+              [err, findAnswer] = await to(axios.get(`${hostDB}/vocabulary?filter=question||$eq||${questionText}&filter=answer||$in||${answers.join(',')}`));
+            } while (err?.message);
+
             const { data } : { data: any[] } = findAnswer;
-            if (data.length > 0) {
+            if (data?.length > 0) {
               console.log("Tìm thấy câu trả lời.");
   
               await page.waitForXPath(`//*[normalize-space(text())="${data[0].answer}"]`, { timeout: 10000 });
