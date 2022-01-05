@@ -592,7 +592,7 @@ export class CronjobService {
               // tự đánh câu trả lời
               await page.waitForXPath(`//div[contains(@class, 'card-button')]`, { timeout: 10000 });
               const answerBtn = await page.$x(`//div[contains(@class, 'card-button')]`);
-              await page.evaluate((el) => el?.click(), answerBtn[0]);s
+              await page.evaluate((el) => el?.click(), answerBtn[0]);
 
               let answerText;
               do {
