@@ -586,6 +586,24 @@ export class CronjobService {
               await page.waitForXPath(`//*[normalize-space(text())="${data[0].answer}"]`, { timeout: 10000 });
               const answerBtn = await page.$x(`//*[normalize-space(text())="${data[0].answer}"]`);
               await page.evaluate((el) => el?.click(), answerBtn[0]);
+
+              let answerText;
+              do {
+                await page.waitForXPath("//div[contains(@class, 'correct')]", { timeout: 120000 });
+                const answer = await page.$x("//div[contains(@class, 'correct')]");
+                answerText = await page.evaluate((el) => el?.textContent, answer[0]);
+              } while (answerText === answerTextOld);
+  
+              if (answerText !== data[0].answer) {
+                console.log("Đã thêm 1 từ vựng!");
+  
+                await to(axios.patch(`${hostDB}/vocabulary/${data[0].id}`, {
+                  "question": questionText,
+                  "answer": answerText
+                }));
+
+                answerTextOld = answerText;
+              }
             } else {
               console.log("Chưa tìm thấy câu trả lời!");
   
