@@ -595,7 +595,7 @@ export class CronjobService {
               } while (answerText === answerTextOld);
   
               if (answerText !== data[0].answer) {
-                console.log("Đã thêm 1 từ vựng!");
+                console.log("Cập nhật 1 từ vựng!");
   
                 await to(axios.patch(`${hostDB}/vocabulary/${data[0].id}`, {
                   "question": questionText,
