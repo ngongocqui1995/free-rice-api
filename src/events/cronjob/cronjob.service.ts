@@ -6,7 +6,6 @@ import axios from 'axios';
 import to from 'await-to-js';
 
 const moment = require('moment');
-const chromium = require('chrome-aws-lambda');
 const puppeteer = require('puppeteer-extra');
 const StealthPlugin = require('puppeteer-extra-plugin-stealth');
 puppeteer.default.use(StealthPlugin());
@@ -37,10 +36,7 @@ export class CronjobService {
       this.globalService.setRunJobVocabulary({ status: true });
 
       try {
-        const browser = await puppeteer.launch({
-          ...configPuppeterr,
-          executablePath: await chromium.executablePath,
-        });
+        const browser = await puppeteer.launch(configPuppeterr);
         this.globalService.setRunJobVocabulary({ browser });
 
         const page: Page = await browser.newPage();
@@ -158,10 +154,7 @@ export class CronjobService {
       this.globalService.setRunJobVocabulary1({ status: true });
 
       try {
-        const browser = await puppeteer.launch({
-          ...configPuppeterr,
-          executablePath: await chromium.executablePath,
-        });
+        const browser = await puppeteer.launch(configPuppeterr);
         this.globalService.setRunJobVocabulary1({ browser });
 
         const page: Page = await browser.newPage();
@@ -279,10 +272,7 @@ export class CronjobService {
       this.globalService.setRunJobVocabulary2({ status: true });
 
       try {
-        const browser = await puppeteer.launch({
-          ...configPuppeterr,
-          executablePath: await chromium.executablePath,
-        });
+        const browser = await puppeteer.launch(configPuppeterr);
         this.globalService.setRunJobVocabulary2({ browser });
 
         const page: Page = await browser.newPage();
@@ -400,10 +390,7 @@ export class CronjobService {
       this.globalService.setRunJobVocabulary3({ status: true });
 
       try {
-        const browser = await puppeteer.launch({
-          ...configPuppeterr,
-          executablePath: await chromium.executablePath,
-        });
+        const browser = await puppeteer.launch(configPuppeterr);
         this.globalService.setRunJobVocabulary3({ browser });
 
         const page: Page = await browser.newPage();
@@ -521,10 +508,7 @@ export class CronjobService {
       this.globalService.setRunJobVocabulary4({ status: true });
 
       try {
-        const browser = await puppeteer.launch({
-          ...configPuppeterr,
-          executablePath: await chromium.executablePath,
-        });
+        const browser = await puppeteer.launch(configPuppeterr);
         this.globalService.setRunJobVocabulary4({ browser });
 
         const page: Page = await browser.newPage();
@@ -642,10 +626,7 @@ export class CronjobService {
       this.globalService.setRunJobVocabulary5({ status: true });
 
       try {
-        const browser = await puppeteer.launch({
-          ...configPuppeterr,
-          executablePath: await chromium.executablePath,
-        });
+        const browser = await puppeteer.launch(configPuppeterr);
         this.globalService.setRunJobVocabulary5({ browser });
 
         const page: Page = await browser.newPage();
@@ -763,10 +744,7 @@ export class CronjobService {
       this.globalService.setRunJobVocabulary6({ status: true });
 
       try {
-        const browser = await puppeteer.launch({
-          ...configPuppeterr,
-          executablePath: await chromium.executablePath,
-        });
+        const browser = await puppeteer.launch(configPuppeterr);
         this.globalService.setRunJobVocabulary6({ browser });
 
         const page: Page = await browser.newPage();
@@ -884,10 +862,7 @@ export class CronjobService {
       this.globalService.setRunJobVocabulary7({ status: true });
 
       try {
-        const browser = await puppeteer.launch({
-          ...configPuppeterr,
-          executablePath: await chromium.executablePath,
-        });
+        const browser = await puppeteer.launch(configPuppeterr);
         this.globalService.setRunJobVocabulary7({ browser });
 
         const page: Page = await browser.newPage();
@@ -1005,10 +980,7 @@ export class CronjobService {
       this.globalService.setRunJobVocabulary8({ status: true });
 
       try {
-        const browser = await puppeteer.launch({
-          ...configPuppeterr,
-          executablePath: await chromium.executablePath,
-        });
+        const browser = await puppeteer.launch(configPuppeterr);
         this.globalService.setRunJobVocabulary8({ browser });
 
         const page: Page = await browser.newPage();
@@ -1126,10 +1098,7 @@ export class CronjobService {
       this.globalService.setRunJobVocabulary9({ status: true });
 
       try {
-        const browser = await puppeteer.launch({
-          ...configPuppeterr,
-          executablePath: await chromium.executablePath,
-        });
+        const browser = await puppeteer.launch(configPuppeterr);
         this.globalService.setRunJobVocabulary9({ browser });
 
         const page: Page = await browser.newPage();
@@ -1247,10 +1216,7 @@ export class CronjobService {
       this.globalService.setRunJobVocabulary10({ status: true });
 
       try {
-        const browser = await puppeteer.launch({
-          ...configPuppeterr,
-          executablePath: await chromium.executablePath,
-        });
+        const browser = await puppeteer.launch(configPuppeterr);
         this.globalService.setRunJobVocabulary10({ browser });
 
         const page: Page = await browser.newPage();
@@ -1368,10 +1334,7 @@ export class CronjobService {
       this.globalService.setRunJobVocabulary11({ status: true });
 
       try {
-        const browser = await puppeteer.launch({
-          ...configPuppeterr,
-          executablePath: await chromium.executablePath,
-        });
+        const browser = await puppeteer.launch(configPuppeterr);
         this.globalService.setRunJobVocabulary11({ browser });
 
         const page: Page = await browser.newPage();
@@ -1489,10 +1452,7 @@ export class CronjobService {
       this.globalService.setRunJobVocabulary12({ status: true });
 
       try {
-        const browser = await puppeteer.launch({
-          ...configPuppeterr,
-          executablePath: await chromium.executablePath,
-        });
+        const browser = await puppeteer.launch(configPuppeterr);
         this.globalService.setRunJobVocabulary12({ browser });
 
         const page: Page = await browser.newPage();
@@ -1610,10 +1570,7 @@ export class CronjobService {
       this.globalService.setRunJobVocabulary13({ status: true });
 
       try {
-        const browser = await puppeteer.launch({
-          ...configPuppeterr,
-          executablePath: await chromium.executablePath,
-        });
+        const browser = await puppeteer.launch(configPuppeterr);
         this.globalService.setRunJobVocabulary13({ browser });
 
         const page: Page = await browser.newPage();
@@ -1731,10 +1688,7 @@ export class CronjobService {
       this.globalService.setRunJobVocabulary14({ status: true });
 
       try {
-        const browser = await puppeteer.launch({
-          ...configPuppeterr,
-          executablePath: await chromium.executablePath,
-        });
+        const browser = await puppeteer.launch(configPuppeterr);
         this.globalService.setRunJobVocabulary14({ browser });
 
         const page: Page = await browser.newPage();
@@ -1852,10 +1806,7 @@ export class CronjobService {
       this.globalService.setRunJobVocabulary15({ status: true });
 
       try {
-        const browser = await puppeteer.launch({
-          ...configPuppeterr,
-          executablePath: await chromium.executablePath,
-        });
+        const browser = await puppeteer.launch(configPuppeterr);
         this.globalService.setRunJobVocabulary15({ browser });
 
         const page: Page = await browser.newPage();
@@ -2293,7 +2244,7 @@ export class CronjobService {
 
   @Cron(CronExpression.EVERY_MINUTE)
   async handleCallHeroku() {
-    await to(axios.get('https://free-rice-api.vercel.app/job/0'));
+    await to(axios.get('https://free-rice-api.herokuapp.com/job/0'));
     await to(axios.get('https://free-rice-api-1.herokuapp.com/job/1'));
     await to(axios.get('https://free-rice-api-2.herokuapp.com/job/2'));
     await to(axios.get('https://free-rice-api-3.herokuapp.com/job/3'));
