@@ -1,6 +1,6 @@
 import { Injectable, Logger } from '@nestjs/common';
 import { Cron, CronExpression } from '@nestjs/schedule';
-import { GlobalService } from 'src/common/global.service';
+import { GlobalService } from '../../common/global.service';
 import { Page } from 'puppeteer';
 import * as moment from 'moment';
 import axios from 'axios';
