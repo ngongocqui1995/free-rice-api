@@ -15,7 +15,7 @@ const configPuppeterr: any = {
   args: ["--disable-gpu", "--no-sandbox", "--disable-setuid-sandbox", "--start-maximized"],
   // linux: yum install chromium
   // executablePath: "/usr/bin/chromium-browser",
-  headless: false,
+  headless: true,
   ignoreHTTPSErrors: true,
   defaultViewport: null,
 };
