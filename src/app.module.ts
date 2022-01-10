@@ -1,13 +1,5 @@
 import { Module } from '@nestjs/common';
 import { ConfigModule } from '@nestjs/config';
-import {
-  AcceptLanguageResolver,
-  CookieResolver,
-  HeaderResolver,
-  I18nJsonParser,
-  I18nModule,
-  QueryResolver,
-} from 'nestjs-i18n';
 import * as path from 'path';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
@@ -22,24 +14,6 @@ import { GlobalService } from './common/global.service';
   imports: [
     ConfigModule.forRoot(),
     ScheduleModule.forRoot(),
-    I18nModule.forRoot({
-      fallbackLanguage: process.env.DEFAULT_LANGUAGE,
-      fallbacks: {
-        'en-*': 'en',
-        'vi-*': 'vi',
-      },
-      parser: I18nJsonParser,
-      parserOptions: {
-        path: path.join(__dirname, '/i18n/'),
-        watch: true,
-      },
-      resolvers: [
-        { use: QueryResolver, options: ['lang', 'locale', 'l'] },
-        new HeaderResolver(['x-custom-lang']),
-        AcceptLanguageResolver,
-        new CookieResolver(['lang', 'locale', 'l']),
-      ],
-    }),
     ServeStaticModule.forRoot({
       rootPath: path.join(__dirname, '..', 'public'),
       serveRoot: '/public',

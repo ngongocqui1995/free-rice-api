@@ -1,13 +1,9 @@
 import { HttpException, HttpStatus, Inject, Injectable, Logger } from '@nestjs/common';
-import { I18nService } from 'nestjs-i18n';
 import { ENUM_STATUS } from './enum';
 
 @Injectable()
 export class BaseController {
   logger: Logger = new Logger(this.constructor.name);
-
-  @Inject()
-  i18n: I18nService;
 
   checkStatusUser = (id: string, userId: string): Promise<any> => {
     if (id != userId) return;

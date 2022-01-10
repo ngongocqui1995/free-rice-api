@@ -1,5 +1,4 @@
 import { NestFactory } from '@nestjs/core';
-import { DocumentBuilder, SwaggerModule } from '@nestjs/swagger';
 import { AppModule } from './app.module';
 import { ValidationPipe } from '@nestjs/common';
 import * as bodyParser from 'body-parser';
@@ -20,15 +19,6 @@ async function bootstrap() {
   app.setViewEngine('hbs');
   app.enableCors();
   // app.setGlobalPrefix('v1');
-
-  const options = new DocumentBuilder()
-    .setTitle('Movie API')
-    .setDescription('The Movie API description')
-    .setVersion('1.0')
-    .addBearerAuth()
-    .build();
-  const document = SwaggerModule.createDocument(app, options);
-  SwaggerModule.setup('api', app, document);
 
   await app.listen(process.env.PORT || process.env.APP_PORT);
   console.log(`Application is Environment: ${process.env.ENVIRONMENT}`);

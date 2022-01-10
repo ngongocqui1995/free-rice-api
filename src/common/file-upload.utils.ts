@@ -1,7 +1,6 @@
 
 import { HttpException, HttpStatus } from '@nestjs/common';
 import { extname } from 'path';
-import { uid } from 'uid';
 
 export const imageFileFilter = (req, file, callback) => {
   if (!file.originalname.match(/\.(jpg|jpeg|png|gif)$/)) {
@@ -18,6 +17,6 @@ export const videoFileFilter = (req, file, callback) => {
 };
 
 export const editFileName = (req, file, callback) => {
-  const randomName = Date.now() + uid(32);
+  const randomName = Date.now();
   return callback(null, `${randomName}${extname(file.originalname)}`);
 };
