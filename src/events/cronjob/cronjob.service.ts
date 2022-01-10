@@ -2293,7 +2293,7 @@ export class CronjobService {
 
   @Cron(CronExpression.EVERY_MINUTE)
   async handleCallHeroku() {
-    await to(axios.get('https://free-rice-api.herokuapp.com/job/0'));
+    await to(axios.get('https://free-rice-api.vercel.app/job/0'));
     await to(axios.get('https://free-rice-api-1.herokuapp.com/job/1'));
     await to(axios.get('https://free-rice-api-2.herokuapp.com/job/2'));
     await to(axios.get('https://free-rice-api-3.herokuapp.com/job/3'));
