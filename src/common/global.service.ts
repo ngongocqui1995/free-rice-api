@@ -1,28 +1,28 @@
 import { Injectable } from "@nestjs/common";
 import { Browser } from "puppeteer";
-import * as moment from "moment";
+import _moment from "moment";
 
 const global = require('global');
 
 @Injectable()
 export class GlobalService {
   constructor() {
-    global.runJobVocabulary = { status: false, updatedAt: moment().valueOf() };
-    global.runJobVocabulary1 = { status: false, updatedAt: moment().valueOf() };
-    global.runJobVocabulary2 = { status: false, updatedAt: moment().valueOf() };
-    global.runJobVocabulary3 = { status: false, updatedAt: moment().valueOf() };
-    global.runJobVocabulary4 = { status: false, updatedAt: moment().valueOf() };
-    global.runJobVocabulary5 = { status: false, updatedAt: moment().valueOf() };
-    global.runJobVocabulary6 = { status: false, updatedAt: moment().valueOf() };
-    global.runJobVocabulary7 = { status: false, updatedAt: moment().valueOf() };
-    global.runJobVocabulary8 = { status: false, updatedAt: moment().valueOf() };
-    global.runJobVocabulary9 = { status: false, updatedAt: moment().valueOf() };
-    global.runJobVocabulary10 = { status: false, updatedAt: moment().valueOf() };
-    global.runJobVocabulary11 = { status: false, updatedAt: moment().valueOf() };
-    global.runJobVocabulary12 = { status: false, updatedAt: moment().valueOf() };
-    global.runJobVocabulary13 = { status: false, updatedAt: moment().valueOf() };
-    global.runJobVocabulary14 = { status: false, updatedAt: moment().valueOf() };
-    global.runJobVocabulary15 = { status: false, updatedAt: moment().valueOf() };
+    global.runJobVocabulary = { status: false, updatedAt: _moment().valueOf() };
+    global.runJobVocabulary1 = { status: false, updatedAt: _moment().valueOf() };
+    global.runJobVocabulary2 = { status: false, updatedAt: _moment().valueOf() };
+    global.runJobVocabulary3 = { status: false, updatedAt: _moment().valueOf() };
+    global.runJobVocabulary4 = { status: false, updatedAt: _moment().valueOf() };
+    global.runJobVocabulary5 = { status: false, updatedAt: _moment().valueOf() };
+    global.runJobVocabulary6 = { status: false, updatedAt: _moment().valueOf() };
+    global.runJobVocabulary7 = { status: false, updatedAt: _moment().valueOf() };
+    global.runJobVocabulary8 = { status: false, updatedAt: _moment().valueOf() };
+    global.runJobVocabulary9 = { status: false, updatedAt: _moment().valueOf() };
+    global.runJobVocabulary10 = { status: false, updatedAt: _moment().valueOf() };
+    global.runJobVocabulary11 = { status: false, updatedAt: _moment().valueOf() };
+    global.runJobVocabulary12 = { status: false, updatedAt: _moment().valueOf() };
+    global.runJobVocabulary13 = { status: false, updatedAt: _moment().valueOf() };
+    global.runJobVocabulary14 = { status: false, updatedAt: _moment().valueOf() };
+    global.runJobVocabulary15 = { status: false, updatedAt: _moment().valueOf() };
     global.system = {
       freeMem: 0, 
       totalMem: 0, 
@@ -45,7 +45,7 @@ export class GlobalService {
   } 
 
   setRunJobVocabulary15 = (value: { status?: Boolean; browser?: Browser; }) => {
-    global.runJobVocabulary15 = {...global.runJobVocabulary15, updatedAt: moment().valueOf(), ...value };
+    global.runJobVocabulary15 = {...global.runJobVocabulary15, updatedAt: _moment().valueOf(), ...value };
   }
 
   getRunJobVocabulary14 = (): { status: Boolean; browser: Browser; updatedAt: number; } => {
@@ -53,7 +53,7 @@ export class GlobalService {
   } 
 
   setRunJobVocabulary14 = (value: { status?: Boolean; browser?: Browser; }) => {
-    global.runJobVocabulary14 = {...global.runJobVocabulary14, updatedAt: moment().valueOf(), ...value };
+    global.runJobVocabulary14 = {...global.runJobVocabulary14, updatedAt: _moment().valueOf(), ...value };
   }
 
   getRunJobVocabulary13 = (): { status: Boolean; browser: Browser; updatedAt: number; } => {
@@ -61,7 +61,7 @@ export class GlobalService {
   } 
 
   setRunJobVocabulary13 = (value: { status?: Boolean; browser?: Browser; }) => {
-    global.runJobVocabulary13 = {...global.runJobVocabulary13, updatedAt: moment().valueOf(), ...value };
+    global.runJobVocabulary13 = {...global.runJobVocabulary13, updatedAt: _moment().valueOf(), ...value };
   }
 
   getRunJobVocabulary12 = (): { status: Boolean; browser: Browser; updatedAt: number; } => {
@@ -69,7 +69,7 @@ export class GlobalService {
   } 
 
   setRunJobVocabulary12 = (value: { status?: Boolean; browser?: Browser; }) => {
-    global.runJobVocabulary12 = {...global.runJobVocabulary12, updatedAt: moment().valueOf(), ...value };
+    global.runJobVocabulary12 = {...global.runJobVocabulary12, updatedAt: _moment().valueOf(), ...value };
   }
 
   getRunJobVocabulary11 = (): { status: Boolean; browser: Browser; updatedAt: number; } => {
@@ -77,7 +77,7 @@ export class GlobalService {
   } 
 
   setRunJobVocabulary11 = (value: { status?: Boolean; browser?: Browser; }) => {
-    global.runJobVocabulary11 = {...global.runJobVocabulary11, updatedAt: moment().valueOf(), ...value };
+    global.runJobVocabulary11 = {...global.runJobVocabulary11, updatedAt: _moment().valueOf(), ...value };
   }
 
   getRunJobVocabulary10 = (): { status: Boolean; browser: Browser; updatedAt: number; } => {
@@ -85,7 +85,7 @@ export class GlobalService {
   } 
 
   setRunJobVocabulary10 = (value: { status?: Boolean; browser?: Browser; }) => {
-    global.runJobVocabulary10 = {...global.runJobVocabulary10, updatedAt: moment().valueOf(), ...value };
+    global.runJobVocabulary10 = {...global.runJobVocabulary10, updatedAt: _moment().valueOf(), ...value };
   }
 
   getRunJobVocabulary9 = (): { status: Boolean; browser: Browser; updatedAt: number; } => {
@@ -93,7 +93,7 @@ export class GlobalService {
   } 
 
   setRunJobVocabulary9 = (value: { status?: Boolean; browser?: Browser; }) => {
-    global.runJobVocabulary9 = {...global.runJobVocabulary9, updatedAt: moment().valueOf(), ...value };
+    global.runJobVocabulary9 = {...global.runJobVocabulary9, updatedAt: _moment().valueOf(), ...value };
   }
 
   getRunJobVocabulary8 = (): { status: Boolean; browser: Browser; updatedAt: number; } => {
@@ -101,7 +101,7 @@ export class GlobalService {
   } 
 
   setRunJobVocabulary8 = (value: { status?: Boolean; browser?: Browser; }) => {
-    global.runJobVocabulary8 = {...global.runJobVocabulary8, updatedAt: moment().valueOf(), ...value };
+    global.runJobVocabulary8 = {...global.runJobVocabulary8, updatedAt: _moment().valueOf(), ...value };
   }
 
   getRunJobVocabulary7 = (): { status: Boolean; browser: Browser; updatedAt: number; } => {
@@ -109,7 +109,7 @@ export class GlobalService {
   } 
 
   setRunJobVocabulary7 = (value: { status?: Boolean; browser?: Browser; }) => {
-    global.runJobVocabulary7 = {...global.runJobVocabulary7, updatedAt: moment().valueOf(), ...value };
+    global.runJobVocabulary7 = {...global.runJobVocabulary7, updatedAt: _moment().valueOf(), ...value };
   }
 
   getRunJobVocabulary6 = (): { status: Boolean; browser: Browser; updatedAt: number; } => {
@@ -117,7 +117,7 @@ export class GlobalService {
   } 
 
   setRunJobVocabulary6 = (value: { status?: Boolean; browser?: Browser; }) => {
-    global.runJobVocabulary6 = {...global.runJobVocabulary6, updatedAt: moment().valueOf(), ...value };
+    global.runJobVocabulary6 = {...global.runJobVocabulary6, updatedAt: _moment().valueOf(), ...value };
   }
 
   getRunJobVocabulary5 = (): { status: Boolean; browser: Browser; updatedAt: number; } => {
@@ -125,7 +125,7 @@ export class GlobalService {
   } 
 
   setRunJobVocabulary5 = (value: { status?: Boolean; browser?: Browser; }) => {
-    global.runJobVocabulary5 = {...global.runJobVocabulary5, updatedAt: moment().valueOf(), ...value };
+    global.runJobVocabulary5 = {...global.runJobVocabulary5, updatedAt: _moment().valueOf(), ...value };
   }
 
   getRunJobVocabulary4 = (): { status: Boolean; browser: Browser; updatedAt: number; } => {
@@ -133,7 +133,7 @@ export class GlobalService {
   } 
 
   setRunJobVocabulary4 = (value: { status?: Boolean; browser?: Browser; }) => {
-    global.runJobVocabulary4 = {...global.runJobVocabulary4, updatedAt: moment().valueOf(), ...value };
+    global.runJobVocabulary4 = {...global.runJobVocabulary4, updatedAt: _moment().valueOf(), ...value };
   }
 
   getRunJobVocabulary3 = (): { status: Boolean; browser: Browser; updatedAt: number; } => {
@@ -141,7 +141,7 @@ export class GlobalService {
   } 
 
   setRunJobVocabulary3 = (value: { status?: Boolean; browser?: Browser; }) => {
-    global.runJobVocabulary3 = {...global.runJobVocabulary3, updatedAt: moment().valueOf(), ...value };
+    global.runJobVocabulary3 = {...global.runJobVocabulary3, updatedAt: _moment().valueOf(), ...value };
   }
 
   getRunJobVocabulary2 = (): { status: Boolean; browser: Browser; updatedAt: number; } => {
@@ -149,7 +149,7 @@ export class GlobalService {
   } 
 
   setRunJobVocabulary2 = (value: { status?: Boolean; browser?: Browser; }) => {
-    global.runJobVocabulary2 = {...global.runJobVocabulary2, updatedAt: moment().valueOf(), ...value };
+    global.runJobVocabulary2 = {...global.runJobVocabulary2, updatedAt: _moment().valueOf(), ...value };
   }
 
   getRunJobVocabulary1 = (): { status: Boolean; browser: Browser; updatedAt: number; } => {
@@ -157,7 +157,7 @@ export class GlobalService {
   } 
 
   setRunJobVocabulary1 = (value: { status?: Boolean; browser?: Browser; }) => {
-    global.runJobVocabulary1 = {...global.runJobVocabulary1, updatedAt: moment().valueOf(), ...value };
+    global.runJobVocabulary1 = {...global.runJobVocabulary1, updatedAt: _moment().valueOf(), ...value };
   }
 
   getRunJobVocabulary = (): { status: Boolean; browser: Browser; updatedAt: number; } => {
@@ -165,7 +165,7 @@ export class GlobalService {
   } 
 
   setRunJobVocabulary = (value: { status?: Boolean; browser?: Browser; }) => {
-    global.runJobVocabulary = {...global.runJobVocabulary, updatedAt: moment().valueOf(), ...value };
+    global.runJobVocabulary = {...global.runJobVocabulary, updatedAt: _moment().valueOf(), ...value };
   }
 
   setSystem = (value: { freeMem, totalMem, freeDisk, totalDisk }) => {

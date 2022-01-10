@@ -2,23 +2,24 @@ import { Injectable, Logger } from '@nestjs/common';
 import { Cron, CronExpression } from '@nestjs/schedule';
 import { GlobalService } from '../../common/global.service';
 import { Page } from 'puppeteer';
-import * as moment from 'moment';
+import _moment from 'moment';
 import axios from 'axios';
 import to from 'await-to-js';
+import chromium from 'chrome-aws-lambda';
 
 const puppeteer = require('puppeteer-extra');
 const StealthPlugin = require('puppeteer-extra-plugin-stealth');
 puppeteer.default.use(StealthPlugin());
 
 const configPuppeterr: any = {
-  args: ["--disable-gpu", "--no-sandbox", "--disable-setuid-sandbox", "--start-maximized"],
+  args: [...chromium.args, "--disable-gpu", "--no-sandbox", "--disable-setuid-sandbox", "--start-maximized"],
   // linux: yum install chromium
   // executablePath: "/usr/bin/chromium-browser",
   headless: true,
   ignoreHTTPSErrors: true,
   defaultViewport: null,
 };
-const hostDB = 'https://free-rice-database.herokuapp.com';
+const hostDB = 'https://free-rice-database.vercel.app';
 
 @Injectable()
 export class CronjobService {
@@ -36,7 +37,10 @@ export class CronjobService {
       this.globalService.setRunJobVocabulary({ status: true });
 
       try {
-        const browser = await puppeteer.launch(configPuppeterr);
+        const browser = await puppeteer.launch({
+          ...configPuppeterr,
+          executablePath: await chromium.executablePath,
+        });
         this.globalService.setRunJobVocabulary({ browser });
 
         const page: Page = await browser.newPage();
@@ -154,7 +158,10 @@ export class CronjobService {
       this.globalService.setRunJobVocabulary1({ status: true });
 
       try {
-        const browser = await puppeteer.launch(configPuppeterr);
+        const browser = await puppeteer.launch({
+          ...configPuppeterr,
+          executablePath: await chromium.executablePath,
+        });
         this.globalService.setRunJobVocabulary1({ browser });
 
         const page: Page = await browser.newPage();
@@ -272,7 +279,10 @@ export class CronjobService {
       this.globalService.setRunJobVocabulary2({ status: true });
 
       try {
-        const browser = await puppeteer.launch(configPuppeterr);
+        const browser = await puppeteer.launch({
+          ...configPuppeterr,
+          executablePath: await chromium.executablePath,
+        });
         this.globalService.setRunJobVocabulary2({ browser });
 
         const page: Page = await browser.newPage();
@@ -390,7 +400,10 @@ export class CronjobService {
       this.globalService.setRunJobVocabulary3({ status: true });
 
       try {
-        const browser = await puppeteer.launch(configPuppeterr);
+        const browser = await puppeteer.launch({
+          ...configPuppeterr,
+          executablePath: await chromium.executablePath,
+        });
         this.globalService.setRunJobVocabulary3({ browser });
 
         const page: Page = await browser.newPage();
@@ -508,7 +521,10 @@ export class CronjobService {
       this.globalService.setRunJobVocabulary4({ status: true });
 
       try {
-        const browser = await puppeteer.launch(configPuppeterr);
+        const browser = await puppeteer.launch({
+          ...configPuppeterr,
+          executablePath: await chromium.executablePath,
+        });
         this.globalService.setRunJobVocabulary4({ browser });
 
         const page: Page = await browser.newPage();
@@ -626,7 +642,10 @@ export class CronjobService {
       this.globalService.setRunJobVocabulary5({ status: true });
 
       try {
-        const browser = await puppeteer.launch(configPuppeterr);
+        const browser = await puppeteer.launch({
+          ...configPuppeterr,
+          executablePath: await chromium.executablePath,
+        });
         this.globalService.setRunJobVocabulary5({ browser });
 
         const page: Page = await browser.newPage();
@@ -744,7 +763,10 @@ export class CronjobService {
       this.globalService.setRunJobVocabulary6({ status: true });
 
       try {
-        const browser = await puppeteer.launch(configPuppeterr);
+        const browser = await puppeteer.launch({
+          ...configPuppeterr,
+          executablePath: await chromium.executablePath,
+        });
         this.globalService.setRunJobVocabulary6({ browser });
 
         const page: Page = await browser.newPage();
@@ -862,7 +884,10 @@ export class CronjobService {
       this.globalService.setRunJobVocabulary7({ status: true });
 
       try {
-        const browser = await puppeteer.launch(configPuppeterr);
+        const browser = await puppeteer.launch({
+          ...configPuppeterr,
+          executablePath: await chromium.executablePath,
+        });
         this.globalService.setRunJobVocabulary7({ browser });
 
         const page: Page = await browser.newPage();
@@ -980,7 +1005,10 @@ export class CronjobService {
       this.globalService.setRunJobVocabulary8({ status: true });
 
       try {
-        const browser = await puppeteer.launch(configPuppeterr);
+        const browser = await puppeteer.launch({
+          ...configPuppeterr,
+          executablePath: await chromium.executablePath,
+        });
         this.globalService.setRunJobVocabulary8({ browser });
 
         const page: Page = await browser.newPage();
@@ -1098,7 +1126,10 @@ export class CronjobService {
       this.globalService.setRunJobVocabulary9({ status: true });
 
       try {
-        const browser = await puppeteer.launch(configPuppeterr);
+        const browser = await puppeteer.launch({
+          ...configPuppeterr,
+          executablePath: await chromium.executablePath,
+        });
         this.globalService.setRunJobVocabulary9({ browser });
 
         const page: Page = await browser.newPage();
@@ -1216,7 +1247,10 @@ export class CronjobService {
       this.globalService.setRunJobVocabulary10({ status: true });
 
       try {
-        const browser = await puppeteer.launch(configPuppeterr);
+        const browser = await puppeteer.launch({
+          ...configPuppeterr,
+          executablePath: await chromium.executablePath,
+        });
         this.globalService.setRunJobVocabulary10({ browser });
 
         const page: Page = await browser.newPage();
@@ -1334,7 +1368,10 @@ export class CronjobService {
       this.globalService.setRunJobVocabulary11({ status: true });
 
       try {
-        const browser = await puppeteer.launch(configPuppeterr);
+        const browser = await puppeteer.launch({
+          ...configPuppeterr,
+          executablePath: await chromium.executablePath,
+        });
         this.globalService.setRunJobVocabulary11({ browser });
 
         const page: Page = await browser.newPage();
@@ -1452,7 +1489,10 @@ export class CronjobService {
       this.globalService.setRunJobVocabulary12({ status: true });
 
       try {
-        const browser = await puppeteer.launch(configPuppeterr);
+        const browser = await puppeteer.launch({
+          ...configPuppeterr,
+          executablePath: await chromium.executablePath,
+        });
         this.globalService.setRunJobVocabulary12({ browser });
 
         const page: Page = await browser.newPage();
@@ -1570,7 +1610,10 @@ export class CronjobService {
       this.globalService.setRunJobVocabulary13({ status: true });
 
       try {
-        const browser = await puppeteer.launch(configPuppeterr);
+        const browser = await puppeteer.launch({
+          ...configPuppeterr,
+          executablePath: await chromium.executablePath,
+        });
         this.globalService.setRunJobVocabulary13({ browser });
 
         const page: Page = await browser.newPage();
@@ -1688,7 +1731,10 @@ export class CronjobService {
       this.globalService.setRunJobVocabulary14({ status: true });
 
       try {
-        const browser = await puppeteer.launch(configPuppeterr);
+        const browser = await puppeteer.launch({
+          ...configPuppeterr,
+          executablePath: await chromium.executablePath,
+        });
         this.globalService.setRunJobVocabulary14({ browser });
 
         const page: Page = await browser.newPage();
@@ -1806,7 +1852,10 @@ export class CronjobService {
       this.globalService.setRunJobVocabulary15({ status: true });
 
       try {
-        const browser = await puppeteer.launch(configPuppeterr);
+        const browser = await puppeteer.launch({
+          ...configPuppeterr,
+          executablePath: await chromium.executablePath,
+        });
         this.globalService.setRunJobVocabulary15({ browser });
 
         const page: Page = await browser.newPage();
@@ -2084,7 +2133,7 @@ export class CronjobService {
     if (true) {
       const { updatedAt, browser } = this.globalService.getRunJobVocabulary();
 
-      if (browser && (moment().valueOf() - moment(updatedAt).valueOf()) > 300000) {
+      if (browser && (_moment().valueOf() - _moment(updatedAt).valueOf()) > 300000) {
         if (browser) await browser.close();
         if (browser?.process() != null) browser?.process().kill('SIGINT');
         this.globalService.setRunJobVocabulary({ status: false, browser: null });
@@ -2094,7 +2143,7 @@ export class CronjobService {
     if (true) {
       const { updatedAt, browser } = this.globalService.getRunJobVocabulary1();
 
-      if (browser && (moment().valueOf() - moment(updatedAt).valueOf()) > 300000) {
+      if (browser && (_moment().valueOf() - _moment(updatedAt).valueOf()) > 300000) {
         if (browser) await browser.close();
         if (browser?.process() != null) browser?.process().kill('SIGINT');
         this.globalService.setRunJobVocabulary1({ status: false, browser: null });
@@ -2104,7 +2153,7 @@ export class CronjobService {
     if (true) {
       const { updatedAt, browser } = this.globalService.getRunJobVocabulary2();
 
-      if (browser && (moment().valueOf() - moment(updatedAt).valueOf()) > 300000) {
+      if (browser && (_moment().valueOf() - _moment(updatedAt).valueOf()) > 300000) {
         if (browser) await browser.close();
         if (browser?.process() != null) browser?.process().kill('SIGINT');
         this.globalService.setRunJobVocabulary2({ status: false, browser: null });
@@ -2114,7 +2163,7 @@ export class CronjobService {
     if (true) {
       const { updatedAt, browser } = this.globalService.getRunJobVocabulary3();
 
-      if (browser && (moment().valueOf() - moment(updatedAt).valueOf()) > 300000) {
+      if (browser && (_moment().valueOf() - _moment(updatedAt).valueOf()) > 300000) {
         if (browser) await browser.close();
         if (browser?.process() != null) browser?.process().kill('SIGINT');
         this.globalService.setRunJobVocabulary3({ status: false, browser: null });
@@ -2124,7 +2173,7 @@ export class CronjobService {
 	if (true) {
       const { updatedAt, browser } = this.globalService.getRunJobVocabulary4();
 
-      if (browser && (moment().valueOf() - moment(updatedAt).valueOf()) > 300000) {
+      if (browser && (_moment().valueOf() - _moment(updatedAt).valueOf()) > 300000) {
         if (browser) await browser.close();
         if (browser?.process() != null) browser?.process().kill('SIGINT');
         this.globalService.setRunJobVocabulary4({ status: false, browser: null });
@@ -2134,7 +2183,7 @@ export class CronjobService {
     if (true) {
       const { updatedAt, browser } = this.globalService.getRunJobVocabulary5();
 
-      if (browser && (moment().valueOf() - moment(updatedAt).valueOf()) > 300000) {
+      if (browser && (_moment().valueOf() - _moment(updatedAt).valueOf()) > 300000) {
         if (browser) await browser.close();
         if (browser?.process() != null) browser?.process().kill('SIGINT');
         this.globalService.setRunJobVocabulary5({ status: false, browser: null });
@@ -2144,7 +2193,7 @@ export class CronjobService {
     if (true) {
       const { updatedAt, browser } = this.globalService.getRunJobVocabulary6();
 
-      if (browser && (moment().valueOf() - moment(updatedAt).valueOf()) > 300000) {
+      if (browser && (_moment().valueOf() - _moment(updatedAt).valueOf()) > 300000) {
         if (browser) await browser.close();
         if (browser?.process() != null) browser?.process().kill('SIGINT');
         this.globalService.setRunJobVocabulary6({ status: false, browser: null });
@@ -2154,7 +2203,7 @@ export class CronjobService {
     if (true) {
       const { updatedAt, browser } = this.globalService.getRunJobVocabulary7();
 
-      if (browser && (moment().valueOf() - moment(updatedAt).valueOf()) > 300000) {
+      if (browser && (_moment().valueOf() - _moment(updatedAt).valueOf()) > 300000) {
         if (browser) await browser.close();
         if (browser?.process() != null) browser?.process().kill('SIGINT');
         this.globalService.setRunJobVocabulary7({ status: false, browser: null });
@@ -2164,7 +2213,7 @@ export class CronjobService {
     if (true) {
       const { updatedAt, browser } = this.globalService.getRunJobVocabulary8();
 
-      if (browser && (moment().valueOf() - moment(updatedAt).valueOf()) > 300000) {
+      if (browser && (_moment().valueOf() - _moment(updatedAt).valueOf()) > 300000) {
         if (browser) await browser.close();
         if (browser?.process() != null) browser?.process().kill('SIGINT');
         this.globalService.setRunJobVocabulary8({ status: false, browser: null });
@@ -2174,7 +2223,7 @@ export class CronjobService {
     if (true) {
       const { updatedAt, browser } = this.globalService.getRunJobVocabulary9();
 
-      if (browser && (moment().valueOf() - moment(updatedAt).valueOf()) > 300000) {
+      if (browser && (_moment().valueOf() - _moment(updatedAt).valueOf()) > 300000) {
         if (browser) await browser.close();
         if (browser?.process() != null) browser?.process().kill('SIGINT');
         this.globalService.setRunJobVocabulary9({ status: false, browser: null });
@@ -2184,7 +2233,7 @@ export class CronjobService {
     if (true) {
       const { updatedAt, browser } = this.globalService.getRunJobVocabulary10();
 
-      if (browser && (moment().valueOf() - moment(updatedAt).valueOf()) > 300000) {
+      if (browser && (_moment().valueOf() - _moment(updatedAt).valueOf()) > 300000) {
         if (browser) await browser.close();
         if (browser?.process() != null) browser?.process().kill('SIGINT');
         this.globalService.setRunJobVocabulary10({ status: false, browser: null });
@@ -2194,7 +2243,7 @@ export class CronjobService {
     if (true) {
       const { updatedAt, browser } = this.globalService.getRunJobVocabulary11();
 
-      if (browser && (moment().valueOf() - moment(updatedAt).valueOf()) > 300000) {
+      if (browser && (_moment().valueOf() - _moment(updatedAt).valueOf()) > 300000) {
         if (browser) await browser.close();
         if (browser?.process() != null) browser?.process().kill('SIGINT');
         this.globalService.setRunJobVocabulary11({ status: false, browser: null });
@@ -2204,7 +2253,7 @@ export class CronjobService {
     if (true) {
       const { updatedAt, browser } = this.globalService.getRunJobVocabulary12();
 
-      if (browser && (moment().valueOf() - moment(updatedAt).valueOf()) > 300000) {
+      if (browser && (_moment().valueOf() - _moment(updatedAt).valueOf()) > 300000) {
         if (browser) await browser.close();
         if (browser?.process() != null) browser?.process().kill('SIGINT');
         this.globalService.setRunJobVocabulary12({ status: false, browser: null });
@@ -2214,7 +2263,7 @@ export class CronjobService {
     if (true) {
       const { updatedAt, browser } = this.globalService.getRunJobVocabulary13();
 
-      if (browser && (moment().valueOf() - moment(updatedAt).valueOf()) > 300000) {
+      if (browser && (_moment().valueOf() - _moment(updatedAt).valueOf()) > 300000) {
         if (browser) await browser.close();
         if (browser?.process() != null) browser?.process().kill('SIGINT');
         this.globalService.setRunJobVocabulary13({ status: false, browser: null });
@@ -2224,7 +2273,7 @@ export class CronjobService {
     if (true) {
       const { updatedAt, browser } = this.globalService.getRunJobVocabulary14();
 
-      if (browser && (moment().valueOf() - moment(updatedAt).valueOf()) > 300000) {
+      if (browser && (_moment().valueOf() - _moment(updatedAt).valueOf()) > 300000) {
         if (browser) await browser.close();
         if (browser?.process() != null) browser?.process().kill('SIGINT');
         this.globalService.setRunJobVocabulary14({ status: false, browser: null });
@@ -2234,7 +2283,7 @@ export class CronjobService {
     if (true) {
       const { updatedAt, browser } = this.globalService.getRunJobVocabulary15();
 
-      if (browser && (moment().valueOf() - moment(updatedAt).valueOf()) > 300000) {
+      if (browser && (_moment().valueOf() - _moment(updatedAt).valueOf()) > 300000) {
         if (browser) await browser.close();
         if (browser?.process() != null) browser?.process().kill('SIGINT');
         this.globalService.setRunJobVocabulary15({ status: false, browser: null });
