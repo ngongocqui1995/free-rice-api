@@ -8,8 +8,6 @@ import {
 import { I18nService } from 'nestjs-i18n';
 import { ENUM_STATUS } from './enum';
 
-const jsdom = require("jsdom");
-
 @Injectable()
 export class BaseService {
   logger: Logger = new Logger(this.constructor.name);
@@ -200,23 +198,6 @@ export class BaseService {
       HttpStatus.BAD_REQUEST,
     );
   };
-
-  isHTML(str) {
-    if (!str) return false;
-  
-    const dom = new jsdom.JSDOM(str);
-    const isHtmlDom = Array.from(dom.window.document.body.childNodes).some((node: any) => node.nodeType === 1);
-    const isJavascript = Array.from(dom.window.document.head.childNodes).some((node: any) => node.nodeType === 1);
-    const isHtml = (val) =>
-      !(val || '')
-        // replace html tag with content
-        .replace(/<([^>]+?)([^>]*?)>(.*?)<\/\1>/gi, '')
-        // remove remaining self closing tags
-        .replace(/(<([^>]+)>)/gi, '')
-        // remove extra space at start and end
-        .trim();
-    return isHtmlDom || isHtml(str) || isJavascript;
-  }
 
   throwErrorSystem = (message: any) => {
     throw new HttpException(message, HttpStatus.BAD_REQUEST);
