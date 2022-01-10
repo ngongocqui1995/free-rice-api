@@ -1,12 +1,12 @@
 import { Injectable, Logger } from '@nestjs/common';
 import { Cron, CronExpression } from '@nestjs/schedule';
 import { GlobalService } from '../../common/global.service';
-import { Page } from 'puppeteer';
+import { Browser, Page } from 'puppeteer';
 import axios from 'axios';
 import to from 'await-to-js';
-import chromium from 'chrome-aws-lambda';
 
 const moment = require('moment');
+const chromium = require('chrome-aws-lambda');
 const puppeteer = require('puppeteer-extra');
 const StealthPlugin = require('puppeteer-extra-plugin-stealth');
 puppeteer.default.use(StealthPlugin());
@@ -15,7 +15,7 @@ const configPuppeterr: any = {
   args: ["--disable-gpu", "--no-sandbox", "--disable-setuid-sandbox", "--start-maximized"],
   // linux: yum install chromium
   // executablePath: "/usr/bin/chromium-browser",
-  headless: true,
+  headless: false,
   ignoreHTTPSErrors: true,
   defaultViewport: null,
 };
