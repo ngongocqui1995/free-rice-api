@@ -60,7 +60,7 @@ export class GlobalService {
     return global.job = { index: value, username, password: (value && 'kissmenow'), server };
   }
 
-  getJob = (): { index: string; username: string; password: string; } => {
+  getJob = (): { index: string; username: string; password: string; server: string; } => {
     return global.job;
   }
 
