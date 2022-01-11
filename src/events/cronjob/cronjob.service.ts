@@ -1,7 +1,7 @@
 import { Injectable, Logger } from '@nestjs/common';
 import { Cron, CronExpression } from '@nestjs/schedule';
 import { GlobalService } from '../../common/global.service';
-import { Browser, Page } from 'puppeteer';
+import { Page } from 'puppeteer';
 import axios from 'axios';
 import to from 'await-to-js';
 
