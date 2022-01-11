@@ -18,7 +18,6 @@ const configPuppeterr: any = {
   ignoreHTTPSErrors: true,
   defaultViewport: null,
 };
-const hostDB = 'https://free-rice-database.vercel.app';
 
 @Injectable()
 export class CronjobService {
@@ -31,7 +30,7 @@ export class CronjobService {
   @Cron(CronExpression.EVERY_5_SECONDS)
   async handleVocabulary() {
     const { status } = this.globalService.getRunJobVocabulary();
-    const { index, username, password } = this.globalService.getJob();
+    const { index, username, pasword, server } = this.globalService.getJob();
     if (!status) {
       console.log(`Chạy job ${index}-------------------------------------------------`);
       this.globalService.setRunJobVocabulary({ status: true });
@@ -77,7 +76,7 @@ export class CronjobService {
           if (questionText) {
             let findAnswer, err;
             do {
-              [err, findAnswer] = await to(axios.get(`${hostDB}/vocabulary?filter=question||$eq||${questionText}&filter=answer||$in||${answers.join(',')}`));
+              [err, findAnswer] = await to(axios.get(`${server}/vocabulary?filter=question||$eq||${questionText}&filter=answer||$in||${answers.join(',')}`));
             } while (err?.message);
 
             const { data } : { data: any[] } = findAnswer;
@@ -98,7 +97,7 @@ export class CronjobService {
               if (answerText !== data[0].answer) {
                 console.log("Cập nhật 1 từ vựng!");
   
-                await to(axios.patch(`${hostDB}/vocabulary/${data[0].id}`, {
+                await to(axios.patch(`${server}/vocabulary/${data[0].id}`, {
                   "question": questionText,
                   "answer": answerText
                 }));
@@ -123,7 +122,7 @@ export class CronjobService {
               if (answerText) {
                 console.log("Đã thêm 1 từ vựng!");
   
-                await to(axios.post(`${hostDB}/vocabulary`, {
+                await to(axios.post(`${server}/vocabulary`, {
                   "question": questionText,
                   "answer": answerText
                 }));
