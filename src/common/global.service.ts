@@ -60,6 +60,8 @@ export class GlobalService {
     if (value == '29') username = 'pdriveanime13@gmail.com';
     if (value == '30') username = 'pdriveanime14@gmail.com';
     if (value == '31') username = 'pdriveanime15@gmail.com';
+    if (value == '32') username = 'pdriveanime16@gmail.com';
+    if (value == '33') username = 'pdriveanime17@gmail.com';
     return global.job = { index: value, username, password: (value && 'kissmenow'), server };
   }
 
