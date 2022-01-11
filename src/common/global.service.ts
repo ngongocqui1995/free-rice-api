@@ -24,7 +24,10 @@ export class GlobalService {
 
   setJob = (value: string) => {
     let username = '';
-    let server = +value <= 15 ? 'https://free-rice-database.vercel.app' : 'https://free-rice-database-1.vercel.app';
+    let server = ''; 
+    if (+value <= 15) server = 'https://free-rice-database.vercel.app';
+    if (+value > 15 && +value <= 31) server = 'https://free-rice-database-1.vercel.app';
+    if (+value > 31 && +value <= 47) server = 'https://free-rice-database-2.vercel.app';
     if (value == '0') username = 'tranphanchau10@gmail.com';
     if (value == '1') username = 'tranphanchau12@gmail.com';
     if (value == '2') username = 'tranphanchau13@gmail.com';
