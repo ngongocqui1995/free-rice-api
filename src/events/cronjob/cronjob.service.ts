@@ -30,7 +30,7 @@ export class CronjobService {
   @Cron(CronExpression.EVERY_5_SECONDS)
   async handleVocabulary() {
     const { status } = this.globalService.getRunJobVocabulary();
-    const { index, username, pasword, server } = this.globalService.getJob();
+    const { index, username, password, server } = this.globalService.getJob();
     if (!status) {
       console.log(`Chạy job ${index}-------------------------------------------------`);
       this.globalService.setRunJobVocabulary({ status: true });
