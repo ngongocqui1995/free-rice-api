@@ -31,7 +31,7 @@ export class CronjobService {
   async handleVocabulary() {
     const { status } = this.globalService.getRunJobVocabulary();
     const { index, username, password, server } = this.globalService.getJob();
-    if (!status) {
+    if (!status && index != '-1') {
       console.log(`Chạy job ${index}-------------------------------------------------`);
       this.globalService.setRunJobVocabulary({ status: true });
 
