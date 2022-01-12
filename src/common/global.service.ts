@@ -24,45 +24,41 @@ export class GlobalService {
 
   setJob = (value: string) => {
     let username = '';
-    let server = ''; 
-    if (+value <= 15) server = 'https://free-rice-database.vercel.app';
-    if (+value > 15 && +value <= 31) server = 'https://free-rice-database-1.vercel.app';
-    if (+value > 31 && +value <= 47) server = 'https://free-rice-database-2.vercel.app';
-    if (value == '0') username = 'tranphanchau10@gmail.com';
-    if (value == '1') username = 'tranphanchau12@gmail.com';
-    if (value == '2') username = 'tranphanchau13@gmail.com';
-    if (value == '3') username = 'tranphanchau14@gmail.com';
-    if (value == '4') username = 'tranphanchau15@gmail.com';
-    if (value == '5') username = 'tranphanchau16@gmail.com';
-    if (value == '6') username = 'tranphanchau17@gmail.com';
-    if (value == '7') username = 'tranphanchau18@gmail.com';
-    if (value == '8') username = 'tranphanchau19@gmail.com';
-    if (value == '9') username = 'tranphanchau20@gmail.com';
-    if (value == '10') username = 'tranphanchau21@gmail.com';
-    if (value == '11') username = 'tranphanchau26@gmail.com';
-    if (value == '12') username = 'tranphanchau27@gmail.com';
-    if (value == '13') username = 'tranphanchau28@gmail.com';
-    if (value == '14') username = 'tranphanchau32@gmail.com';
-    if (value == '15') username = 'tranphanchau39@gmail.com';
-    if (value == '16') username = 'pdriveanime@gmail.com';
-    if (value == '17') username = 'pdriveanime1@gmail.com';
-    if (value == '18') username = 'pdriveanime2@gmail.com';
-    if (value == '19') username = 'pdriveanime3@gmail.com';
-    if (value == '20') username = 'pdriveanime4@gmail.com';
-    if (value == '21') username = 'pdriveanime5@gmail.com';
-    if (value == '22') username = 'pdriveanime6@gmail.com';
-    if (value == '23') username = 'pdriveanime7@gmail.com';
-    if (value == '24') username = 'pdriveanime8@gmail.com';
-    if (value == '25') username = 'pdriveanime9@gmail.com';
-    if (value == '26') username = 'pdriveanime10@gmail.com';
-    if (value == '27') username = 'pdriveanime11@gmail.com';
-    if (value == '28') username = 'pdriveanime12@gmail.com';
-    if (value == '29') username = 'pdriveanime13@gmail.com';
-    if (value == '30') username = 'pdriveanime14@gmail.com';
-    if (value == '31') username = 'pdriveanime15@gmail.com';
-    if (value == '32') username = 'pdriveanime16@gmail.com';
-    if (value == '33') username = 'pdriveanime17@gmail.com';
-    return global.job = { index: value, username, password: (value && 'kissmenow'), server };
+    if (value == '0') username = 'tranphanchau10@gmail.com'; // tranphanchau10@gmail.com
+    if (value == '1') username = 'tranphanchau12@gmail.com'; // tranphanchau15@gmail.com
+    if (value == '2') username = 'tranphanchau13@gmail.com'; // tranphanchau15@gmail.com
+    if (value == '3') username = 'tranphanchau14@gmail.com'; // tranphanchau15@gmail.com
+    if (value == '4') username = 'tranphanchau15@gmail.com'; // tranphanchau15@gmail.com
+    if (value == '5') username = 'tranphanchau16@gmail.com'; // tranphanchau15@gmail.com
+    if (value == '6') username = 'tranphanchau17@gmail.com'; // tranphanchau15@gmail.com
+    if (value == '7') username = 'tranphanchau18@gmail.com'; // tranphanchau12@gmail.com
+    if (value == '8') username = 'tranphanchau19@gmail.com'; // tranphanchau12@gmail.com
+    if (value == '9') username = 'tranphanchau20@gmail.com'; // tranphanchau12@gmail.com
+    if (value == '10') username = 'tranphanchau21@gmail.com'; // tranphanchau12@gmail.com
+    if (value == '11') username = 'tranphanchau26@gmail.com'; // tranphanchau12@gmail.com
+    if (value == '12') username = 'tranphanchau27@gmail.com'; // tranphanchau12@gmail.com
+    if (value == '13') username = 'tranphanchau28@gmail.com'; // tranphanchau12@gmail.com
+    if (value == '14') username = 'tranphanchau32@gmail.com'; // tranphanchau12@gmail.com
+    if (value == '15') username = 'tranphanchau39@gmail.com'; // tranphanchau12@gmail.com
+    if (value == '16') username = 'pdriveanime@gmail.com'; // tranphanchau13@gmail.com
+    if (value == '17') username = 'pdriveanime1@gmail.com'; // tranphanchau13@gmail.com
+    if (value == '18') username = 'pdriveanime2@gmail.com'; // tranphanchau13@gmail.com
+    if (value == '19') username = 'pdriveanime3@gmail.com'; // tranphanchau13@gmail.com
+    if (value == '20') username = 'pdriveanime4@gmail.com'; // tranphanchau13@gmail.com
+    if (value == '21') username = 'pdriveanime5@gmail.com'; // tranphanchau13@gmail.com
+    if (value == '22') username = 'pdriveanime6@gmail.com'; // tranphanchau13@gmail.com
+    if (value == '23') username = 'pdriveanime7@gmail.com'; // tranphanchau13@gmail.com
+    if (value == '24') username = 'pdriveanime8@gmail.com'; // tranphanchau13@gmail.com
+    if (value == '25') username = 'pdriveanime9@gmail.com'; // tranphanchau14@gmail.com
+    if (value == '26') username = 'pdriveanime10@gmail.com'; // tranphanchau14@gmail.com
+    if (value == '27') username = 'pdriveanime11@gmail.com'; // tranphanchau14@gmail.com
+    if (value == '28') username = 'pdriveanime12@gmail.com'; // tranphanchau14@gmail.com
+    if (value == '29') username = 'pdriveanime13@gmail.com'; // tranphanchau14@gmail.com
+    if (value == '30') username = 'pdriveanime14@gmail.com'; // tranphanchau14@gmail.com
+    if (value == '31') username = 'pdriveanime15@gmail.com'; // tranphanchau14@gmail.com
+    if (value == '32') username = 'pdriveanime16@gmail.com'; // tranphanchau14@gmail.com
+    if (value == '33') username = 'pdriveanime17@gmail.com'; // tranphanchau14@gmail.com
+    return global.job = { index: value, username, password: (value && 'kissmenow'), server: 'https://free-rice-database.herokuapp.com' };
   }
 
   getJob = (): { index: string; username: string; password: string; server: string; } => {
