@@ -58,6 +58,8 @@ export class GlobalService {
     if (value == '31') username = 'pdriveanime15@gmail.com'; // tranphanchau14@gmail.com
     if (value == '32') username = 'pdriveanime16@gmail.com'; // tranphanchau14@gmail.com
     if (value == '33') username = 'pdriveanime17@gmail.com'; // tranphanchau14@gmail.com
+    if (value == '34') username = 'tranphanchau40@gmail.com'; // tranphanchau16@gmail.com
+    if (value == '35') username = 'tranphanchau41@gmail.com'; // tranphanchau16@gmail.com
     return global.job = { index: value, username, password: (value && 'kissmenow'), server: 'https://free-rice-database.herokuapp.com' };
   }
 
