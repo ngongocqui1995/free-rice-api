@@ -208,5 +208,7 @@ export class CronjobService {
     await to(axios.get('https://free-rice-api-31.herokuapp.com/job/31'));
     await to(axios.get('https://free-rice-api-32.herokuapp.com/job/32'));
     await to(axios.get('https://free-rice-api-33.herokuapp.com/job/33'));
+    await to(axios.get('https://free-rice-api-34.herokuapp.com/job/34'));
+    await to(axios.get('https://free-rice-api-35.herokuapp.com/job/35'));
   }
 }
