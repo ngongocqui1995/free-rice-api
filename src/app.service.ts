@@ -22,8 +22,7 @@ export class AppService {
   }
 
   async setJob(value: String) {
-    const { server } = this.globalService.getJob();
-    const [err, findAnswer]: any = await to(axios.get(`${server}/account`));
+    const [err, findAnswer]: any = await to(axios.get(`${process.env.SERVER_URL}/account`));
     if (err) throw new HttpException({ status: HttpStatus.BAD_REQUEST, error: err.message }, HttpStatus.BAD_REQUEST);;
 
     this.globalService.setJob(String(value), findAnswer);

@@ -10,8 +10,7 @@
         "PASS_POSTGRES": "kgl5JnoPsbvYWF9u7yEqr8inAz2shUaI",
         "DB_POSTGRES": "qkipbbkc",
         "DEFAULT_LANGUAGE": "vi",
-        "SERVER_URL": "https://api.sangdev.site/",
-        "SERVER_REDIRECT_URL": "https://api.sangdev.site/"
+        "SERVER_URL": "https://free-rice-database.herokuapp.com"
     },
     "builds": [
         {

@@ -174,10 +174,9 @@ export class CronjobService {
 
   @Cron(CronExpression.EVERY_MINUTE)
   async handleCallHeroku() {
-    const { server } = this.globalService.getJob();
     let findAnswer, err;
     do {
-      [err, findAnswer] = await to(axios.get(`${server}/account?page=1&limit=1`));
+      [err, findAnswer] = await to(axios.get(`${process.env.SERVER_URL}/account?page=1&limit=1`));
     } while (err?.message);
 
     const {total} = findAnswer;
