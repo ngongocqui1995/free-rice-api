@@ -22,10 +22,14 @@ export class AppService {
   }
 
   async setJob(value: String) {
-    const [err, findAnswer]: any = await to(axios.get(`${process.env.SERVER_URL}/account`));
-    if (err) throw new HttpException({ status: HttpStatus.BAD_REQUEST, error: err.message }, HttpStatus.BAD_REQUEST);;
+    const {username} = this.globalService.getJob();
 
-    this.globalService.setJob(String(value), findAnswer);
+    if (!username) {
+      const [err, findAnswer]: any = await to(axios.get(`${process.env.SERVER_URL}/account`));
+      if (err) throw new HttpException({ status: HttpStatus.BAD_REQUEST, error: err.message }, HttpStatus.BAD_REQUEST);;
+  
+      this.globalService.setJob(String(value), findAnswer?.data || []);
+    }
     return true;
   }
 }

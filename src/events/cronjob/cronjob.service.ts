@@ -174,15 +174,18 @@ export class CronjobService {
 
   @Cron(CronExpression.EVERY_MINUTE)
   async handleCallHeroku() {
-    let findAnswer, err;
-    do {
-      [err, findAnswer] = await to(axios.get(`${process.env.SERVER_URL}/account?page=1&limit=1`));
-    } while (err?.message);
-
-    const {total} = findAnswer;
-    for (let i=0; i<total; i++) {
-      if (i === 0) await to(axios.get(`https://free-rice-api.herokuapp.com/job/${i}`));
-      if (i !== 0) await to(axios.get(`https://free-rice-api-${i}.herokuapp.com/job/${i}`));
+    const { index } = this.globalService.getJob();
+    if (['0', '1', '2', '3'].includes(index)) { // nhớ sửa code
+      let findAnswer, err;
+      do {
+        [err, findAnswer] = await to(axios.get(`${process.env.SERVER_URL}/account?page=1&limit=1`));
+      } while (err?.message);
+  
+      const {total} = findAnswer;
+      for (let i=0; i<total; i++) {
+        if (i === 0) await to(axios.get(`https://free-rice-api.herokuapp.com/job/${i}`));
+        if (i !== 0) await to(axios.get(`https://free-rice-api-${i}.herokuapp.com/job/${i}`));
+      }
     }
   }
 }
