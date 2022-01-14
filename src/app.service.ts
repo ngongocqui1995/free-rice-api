@@ -1,4 +1,6 @@
-import { Injectable } from '@nestjs/common';
+import { HttpException, HttpStatus, Injectable } from '@nestjs/common';
+import to from 'await-to-js';
+import axios from 'axios';
 import { GlobalService } from './common/global.service';
 
 @Injectable()
@@ -19,8 +21,12 @@ export class AppService {
     return this.globalService.getJob();
   }
 
-  setJob(value: String) {
-    this.globalService.setJob(String(value));
+  async setJob(value: String) {
+    const { server } = this.globalService.getJob();
+    const [err, findAnswer] = await to(axios.get(`${server}/account`));
+    if (err) throw new HttpException({ status: HttpStatus.BAD_REQUEST, error: err.message }, HttpStatus.BAD_REQUEST);;
+
+    this.globalService.setJob(String(value), findAnswer);
     return true;
   }
 }

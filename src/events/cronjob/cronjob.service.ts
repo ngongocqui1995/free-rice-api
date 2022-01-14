@@ -76,7 +76,7 @@ export class CronjobService {
           if (questionText) {
             let findAnswer, err;
             do {
-              [err, findAnswer] = await to(axios.get(`${server}/vocabulary?filter=question||$eq||${questionText}&filter=answer||$in||${answers.join(',')}`));
+              [err, findAnswer] = await to(axios.get(`${server}/vocabulary?filter=question||$eq||${questionText}&filter=answer||$in||${answers.filter(n => n).join(',')}`));
             } while (err?.message);
 
             const { data } : { data: any[] } = findAnswer;
@@ -174,41 +174,16 @@ export class CronjobService {
 
   @Cron(CronExpression.EVERY_MINUTE)
   async handleCallHeroku() {
-    await to(axios.get('https://free-rice-api.herokuapp.com/job/0'));
-    await to(axios.get('https://free-rice-api-1.herokuapp.com/job/1'));
-    await to(axios.get('https://free-rice-api-2.herokuapp.com/job/2'));
-    await to(axios.get('https://free-rice-api-3.herokuapp.com/job/3'));
-    await to(axios.get('https://free-rice-api-4.herokuapp.com/job/4'));
-    await to(axios.get('https://free-rice-api-5.herokuapp.com/job/5'));
-    await to(axios.get('https://free-rice-api-6.herokuapp.com/job/6'));
-    await to(axios.get('https://free-rice-api-7.herokuapp.com/job/7'));
-    await to(axios.get('https://free-rice-api-8.herokuapp.com/job/8'));
-    await to(axios.get('https://free-rice-api-9.herokuapp.com/job/9'));
-    await to(axios.get('https://free-rice-api-10.herokuapp.com/job/10'));
-    await to(axios.get('https://free-rice-api-11.herokuapp.com/job/11'));
-    await to(axios.get('https://free-rice-api-12.herokuapp.com/job/12'));
-    await to(axios.get('https://free-rice-api-13.herokuapp.com/job/13'));
-    await to(axios.get('https://free-rice-api-14.herokuapp.com/job/14'));
-    await to(axios.get('https://free-rice-api-15.herokuapp.com/job/15'));
-    await to(axios.get('https://free-rice-api-16.herokuapp.com/job/16'));
-    await to(axios.get('https://free-rice-api-17.herokuapp.com/job/17'));
-    await to(axios.get('https://free-rice-api-18.herokuapp.com/job/18'));
-    await to(axios.get('https://free-rice-api-19.herokuapp.com/job/19'));
-    await to(axios.get('https://free-rice-api-20.herokuapp.com/job/20'));
-    await to(axios.get('https://free-rice-api-21.herokuapp.com/job/21'));
-    await to(axios.get('https://free-rice-api-22.herokuapp.com/job/22'));
-    await to(axios.get('https://free-rice-api-23.herokuapp.com/job/23'));
-    await to(axios.get('https://free-rice-api-24.herokuapp.com/job/24'));
-    await to(axios.get('https://free-rice-api-25.herokuapp.com/job/25'));
-    await to(axios.get('https://free-rice-api-26.herokuapp.com/job/26'));
-    await to(axios.get('https://free-rice-api-27.herokuapp.com/job/27'));
-    await to(axios.get('https://free-rice-api-28.herokuapp.com/job/28'));
-    await to(axios.get('https://free-rice-api-29.herokuapp.com/job/29'));
-    await to(axios.get('https://free-rice-api-30.herokuapp.com/job/30'));
-    await to(axios.get('https://free-rice-api-31.herokuapp.com/job/31'));
-    await to(axios.get('https://free-rice-api-32.herokuapp.com/job/32'));
-    await to(axios.get('https://free-rice-api-33.herokuapp.com/job/33'));
-    await to(axios.get('https://free-rice-api-34.herokuapp.com/job/34'));
-    await to(axios.get('https://free-rice-api-35.herokuapp.com/job/35'));
+    const { server } = this.globalService.getJob();
+    let findAnswer, err;
+    do {
+      [err, findAnswer] = await to(axios.get(`${server}/account?page=1&limit=1`));
+    } while (err?.message);
+
+    const {total} = findAnswer;
+    for (let i=0; i<total; i++) {
+      if (i === 0) await to(axios.get(`https://free-rice-api.herokuapp.com/job/${i}`));
+      if (i !== 0) await to(axios.get(`https://free-rice-api-${i}.herokuapp.com/job/${i}`));
+    }
   }
 }
